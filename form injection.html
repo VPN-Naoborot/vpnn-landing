@@ -1,0 +1,48 @@
+<script>
+
+function get_tarif() {
+//     return document.querySelector("#app > div.main-layout.min-h-screen.flex.flex-col > div.flex.flex-col.flex-grow > div > div > div > form > div.form-group.flex.flex-wrap.w-full > div:nth-child(4) > div > div > span > button > div > div > div > div").innerHTML  // test form
+    return document.querySelector("#app > div.main-layout.min-h-screen.flex.flex-col > div.flex.flex-col.flex-grow > div > div > div > form > div.form-group.flex.flex-wrap.w-full > div:nth-child(3) > div > div > span > button > div > div > div > div").innerHTML
+}
+    
+function get_email() {
+//     return document.querySelector("#app > div.main-layout.min-h-screen.flex.flex-col > div.flex.flex-col.flex-grow > div > div > div > form > div.form-group.flex.flex-wrap.w-full > div:nth-child(4) > div > div > span > button > div > div > div > div").innerHTML  // test form
+    return document.querySelector("#b8a3b10d-11c6-4f10-ad66-fd81ba4a240d").value
+}  
+
+let oldXHROpen = window.XMLHttpRequest.prototype.open;
+window.XMLHttpRequest.prototype.open = function(method, url, async, user, password) {
+     // do something with the method, url and etc.
+    console.log(method, url, async)
+//     if (url == "/api/forms/ostavte-zaiavku/answer"){  // test form
+    if (url == "/api/forms/ostavte-zaiavku-2/answer"){
+        window.attempt = {
+            "tarif": get_tarif(),
+            "email": get_email()
+        }
+    }
+    
+    this.addEventListener('load', function() {
+      // do something with the response text
+        
+    try {
+      if (JSON.parse(this.responseText)["type"] == "success") {
+          window.attempt["status"] = "success"
+      } else {
+          window.attempt["status"] = "fail"
+      }
+      
+      window.parent.postMessage(JSON.stringify(window.attempt), 'https://vpn-naoborot.online/'); //'https://notionforms.io');
+        
+      console.log(window.attempt);
+      console.log('load: ' + this.responseText);
+
+    } catch (error) {
+      console.error(error);
+    }
+           
+    });
+
+    return oldXHROpen.apply(this, arguments);
+}
+</script>
