@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <!-- MetaTags -->
+    <meta name="description" content="Description of the page less than 150 characters">
+    <meta name="keywords" content="KeyWords">
+    <!-- OG tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:title" content="Content Title">
+    <meta property="og:image" content="https://www.developmentlogics.com/wp-content/uploads/2017/07/4.jpg">
+    <meta property="og:description" content="Description Here">
+    <meta property="og:site_name" content="Site Name">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Site Name">
+    <meta name="twitter:description" content="Description Here">
+    <meta name="twitter:image" content="https://www.developmentlogics.com/wp-content/uploads/2017/07/4.jpg">
+    <!-- Favivon -->
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <!-- Mobiles Header Color -->
+    <meta name="theme-color" content="#000">
+    <meta name="msapplication-navbutton-color" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/libs.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Главная страница</title>
+</head>
+
+<body>
+
+
+
+    <main>
+        <script>
+            const content = `    <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="custom-select">
+                        <div class="custom-select-label">Валюта</div>
+                        <div class="select-name" data-value="₽" data-name="Евро">
+                            <span>Рубли</span>
+                            <span class="select-image">
+                                <img src="/assets/images/select.svg" alt=""></span>
+                        </div>
+                        <div class="select-list " data-select-list>
+                            <div class="select-item" data-item data-value="€" data-name="Евро">Евро</div>
+                            <div class="select-item selected" data-item data-value="₽" data-name="Рубли">Рубли</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards row">
+    
+            </div>
+        </div>
+    `
+
+
+            document.addEventListener('DOMContentLoaded', () => {
+
+                let h = document.querySelector('#content')
+                h.innerHTML = content;
+                const items = [{
+                        icon: "🤝",
+                        name: "Бесплатный",
+                        image: "/assets/images/personal.png",
+                        description: "Для документов, ЖКХ, налогов, кадастра и т.п.",
+                        price: "Бесплатно",
+                        currency: "",
+                        period: 12,
+                        currencies: [],
+                        plans: [],
+                        tariff: "🤝  Бесплатный",
+                        secondary_info: "Будем рады вашим донатам",
+                        button: "Подключиться",
+                        features: ["🐢 1 Мбит/с", "✅ Доступ к сайтам", "⏳ Ключ придёт в течение суток", "🛑 Работает 7 дней", "🛑 Нельзя смотреть видео и качать большие файлы"],
+                        speed: "~1 Мбит/с",
+                        plan_color: "color-yellow",
+                        button_color: ""
+                    },
+                    {
+                        name: "Для документов",
+                        tariff: "📂  Для документов",
+                        image: "/assets/images/pro.png",
+                        icon: "📂",
+                        description: "Как бесплатный, но чуть стабильнее.",
+                        price: 100,
+                        currency: "₽",
+                        period: 12,
+                        currencies: [{
+                            currency: "€",
+                            price: 1,
+                            plans: [{
+                                    period: 6,
+                                    price: 1.5,
+                                    currency: "€"
+                                },
+                                {
+                                    period: 1,
+                                    price: 2,
+                                    currency: "€"
+                                },
+                            ],
+
+                        }],
+                        plans: [{
+                                period: 6,
+                                price: 130,
+                                currency: "₽"
+                            },
+                            {
+                                period: 1,
+                                price: 160,
+                                currency: "₽"
+                            },
+                        ],
+                        secondary_info: "",
+                        button: "Подключиться",
+                        features: ["🚜 2 Мбит/с", "✅ Доступ к сайтам", "✅ Ключ придёт за пару минут",
+                            "✅ Работает, пока активна подписка",
+                            "🛑 Нельзя смотреть видео и качать большие файлы",
+                            "💙 Заботливая поддержка"
+                        ],
+                        speed: "~2 Мбит/с",
+                        plan_color: "color-blue",
+                        button_color: "",
+
+                    },
+                    {
+                        icon: "📺",
+                        name: "Для видео",
+                        tariff: "📺  Для видео",
+                        image: "/assets/images/team.png",
+                        description: "Для документов, развлечений и удалённой учёбы.",
+                        price: 250,
+                        currency: "₽",
+                        period: 12,
+                        currencies: [{
+                            currency: "€",
+                            price: 3,
+                            period: 12,
+                            plans: [{
+                                    period: 6,
+                                    price: 4,
+                                    currency: "€"
+                                },
+                                {
+                                    period: 1,
+                                    price: 5,
+                                    currency: "€"
+                                },
+                            ],
+
+                        }],
+                        plans: [{
+                                period: 6,
+                                price: 330,
+                                currency: "₽"
+                            },
+                            {
+                                period: 1,
+                                price: 390,
+                                currency: "₽"
+                            },
+                        ],
+                        secondary_info: "",
+                        button: "Подключиться",
+                        features: ["🏎️ 10 Мбит/с", "✅ Доступ к сайтам", "✅ Ключ придёт за пару минут",
+                            "✅ Работает, пока активна подписка",
+                            "✅ Можно смотреть видео и качать большие файлы",
+                            "💙 Заботливая поддержка",
+                            "📶 Высокая скорость и стабильность"
+                        ],
+                        speed: "~10 Мбит/с",
+                        plan_color: "color-red",
+                        button_color: "bg-blue",
+
+
+                    },
+                    {
+                        icon: "😎",
+                        tariff: "😎 Персональный",
+                        name: "Персональный",
+                        image: "/assets/images/enterprise.png",
+                        description: "Для документов, развлечений, удалённой учёбы и работы.",
+                        price: 600,
+                        currency: "₽",
+                        period: 12,
+                        currencies: [{
+                            currency: "€",
+                            price: 8,
+                            period: 12,
+                            plans: [{
+                                    period: 6,
+                                    price: 10,
+                                    currency: "€"
+                                },
+                                {
+                                    period: 1,
+                                    price: 12,
+                                    currency: "€"
+                                },
+                            ],
+
+                        }],
+                        plans: [{
+                                period: 6,
+                                price: 850,
+                                currency: "₽"
+                            },
+                            {
+                                period: 1,
+                                price: 1000,
+                                currency: "₽"
+                            },
+                        ],
+                        secondary_info: "",
+                        button: "Подключиться",
+                        features: [
+                            "🚀 40 Мбит/с",
+                            "✅ Доступ к сайтам", "✅ Ключ придёт за пару минут",
+                            "✅ Работает, пока активна подписка",
+                            "✅ Можно смотреть видео и качать большие файлы",
+                            "💙 Заботливая поддержка",
+                            "🔥 Максимальная скорость и стабильность",
+                            "🔒 Выделенный IP",
+                            "📍Можно выбрать город сервера"
+                        ],
+                        speed: "~40 Мбит/с",
+                        plan_color: "color-purple",
+                        button_color: "",
+
+
+                    },
+                ];
+                const preparePrice = (price, currency) => {
+                    let currency_position = localStorage.getItem('current_currency_position');
+                    if (!currency_position) {
+                        currency_position = "right";
+                    }
+
+                    if (typeof price == "string") {
+                        return price
+                    }
+
+                    return `${currency_position === "right" ? `${price} ${currency}` : `${currency} ${price}`}`
+                };
+                const arrayToHtml = (array) => {
+                    let html = "";
+                    array.forEach(item => html += item);
+                    return html;
+
+                }
+                const plural = (value, words) => {
+                    value = Math.abs(value) % 100;
+                    const num = value % 10;
+                    if (value > 10 && value < 20) return words[2];
+                    if (num > 1 && num < 5) return words[1];
+                    if (num == 1) return words[0];
+                    return words[2];
+
+                };
+                const product = (product) => {
+                    return `
+                 <div class="col-md-6 col-lg-3 col-sm-12 mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                                                       <span class="card-header-icon">${product.icon}</span>
+    
+                            <h4 class="plan-name ${product.plan_color}">
+                                ${product.name}
+                            </h4>
+                            <div class="header-secondary">
+                                <p>${product.description}</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="vertical-margin">
+                                <div class="price-wrap">
+                                    <div class="card-price">
+                                        <h4>${preparePrice(product.price, product.currency)}</h4>
+                                        ${typeof product.price != "string" ? `<p class="card-price-description" >В месяц при оплате за год</p>` : `<p>${product.secondary_info}</p>`}
+    
+                                        ${arrayToHtml(product.plans.map(plan => `<p class="card-price-description">${preparePrice(plan.price, plan.currency)} при оплате за ${plan.period} ${plural(plan.period, ["месяц", "месяца", "месяцев"])}</p>`))}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vertical-margin">
+                                <div class="card-action">
+                                    <button class="btn card-btn-buy ${product.button_color}">${product.button}</button>
+                                </div>
+                            </div>
+                            <div class="vertical-margin">
+                                <ul class="features-list">
+                                ${arrayToHtml(product.features.map(feature => `<li>${feature}</li>`))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+                };
+                const renderProducts = (products) => {
+                    const cardRow = document.querySelector('.cards');
+                    if (cardRow) {
+                        while (cardRow.firstChild) {
+                            cardRow.removeChild(cardRow.lastChild);
+                        }
+
+                        products.forEach(productItem => cardRow.insertAdjacentHTML('beforeend', product(productItem)));
+                    }
+
+                }
+                renderProducts(items);
+                const prepareItems = (items, currency) => {
+
+                    return items.map(item => {
+                        const dataForReplace = item.currencies.filter(currencyItem => currencyItem.currency === currency)[0];
+                        if (dataForReplace) {
+                            item = {
+                                ...item,
+                                ...dataForReplace,
+                                currencies: {
+                                    currency: item.currency,
+                                    price: item.price,
+                                    period: 12,
+                                    plans: item.plans,
+                                }
+                            }
+                        }
+                        return item
+
+
+                    })
+                }
+
+                const selectListValue = document.querySelector('.custom-select .select-name');
+                selectListValue.addEventListener('click', function(event) {
+                    const selectList = selectListValue.closest('.custom-select').querySelector('.select-list')
+                    selectList.classList.toggle('active');
+
+                    selectList.addEventListener('click', (eventSelectItem) => {
+                        const target = eventSelectItem.target.closest('.select-item')
+                        if (target) {
+                            selectList.querySelectorAll('.select-item').forEach(element => element.classList.remove('selected'))
+                            target.classList.add('selected')
+                            console.log('rerender')
+                            selectListValue.textContent = target.dataset.name;
+                            selectListValue.dataset.name = target.dataset.name;
+                            selectListValue.dataset.value = target.dataset.value;
+
+
+                            setTimeout(() => {
+                                selectList.classList.remove('active');
+
+                            }, 100)
+                            const products = prepareItems(items, target.dataset.value)
+                            renderProducts(products)
+
+                        }
+                    })
+                })
+            })
+        </script>
+
+        <div id="content"></div>
+    </main>
+
+
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
