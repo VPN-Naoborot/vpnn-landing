@@ -398,7 +398,7 @@ button {
       padding-bottom: 5px; }
     .custom-select .select-list .select-item.selected:after {
       content: "";
-      background-image: url(/assets/images/selected.svg);
+      background-image: url(https://raw.githubusercontent.com/VPN-Naoborot/vpnn-landing/main/dist/assets/images/selected.svg);
       width: 20px;
       height: 20px; }
     .custom-select .select-list.active {
