@@ -1062,24 +1062,24 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         name: "Для документов",
                         tariff: "📂 Для документов",
                         icon: "📂",
-                        price: 150,
-                        currency: "₽",
+                        price: 1.5,
+                        currency: "€",
                         period: 12,
                         currencies: [
                             {
-                                currency: "€",
-                                price: 1.5,
+                                currency: "₽",
+                                price: 150,
                                 period: 12,
                                 plans: [
                                     {
                                         period: 6,
-                                        price: 2 ,
-                                        currency: "€"
+                                        price: 190,
+                                        currency: "₽"
                                     },
                                     {
                                         period: 1,
-                                        price: 3,
-                                        currency: "€"
+                                        price: 290,
+                                        currency: "₽"
                                     },
                                 ],
                             }
@@ -1087,13 +1087,13 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         plans: [
                             {
                                 period: 6,
-                                price: 190,
-                                currency: "₽"
+                                price: 2,
+                                currency: "€"
                             },
                             {
                                 period: 1,
-                                price: 290,
-                                currency: "₽"
+                                price: 3,
+                                currency: "€"
                             },
                         ],
                         selected: true,
@@ -1102,24 +1102,24 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         icon: "📺",
                         name: "Для видео",
                         tariff: "📺 Для видео",
-                        price: 290,
-                        currency: "₽",
+                        price: 3,
+                        currency: "€",
                         period: 12,
                         currencies: [
                             {
-                                currency: "€",
-                                price: 3,
+                                currency: "₽",
+                                price: 290,
                                 period: 12,
                                 plans: [
                                     {
                                         period: 6,
-                                        price: 4.5,
-                                        currency: "€"
+                                        price: 450,
+                                        currency: "₽"
                                     },
                                     {
                                         period: 1,
-                                        price: 6,
-                                        currency: "€"
+                                        price: 590,
+                                        currency: "₽"
                                     },
                                 ],
                             }
@@ -1127,39 +1127,39 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         plans: [
                             {
                                 period: 6,
-                                price: 450,
-                                currency: "₽"
+                                price: 4.5,
+                                currency: "€"
                             },
                             {
                                 period: 1,
-                                price: 590,
-                                currency: "₽"
+                                price: 6,
+                                currency: "€"
                             },
                         ],
                         selected: false,
                     },
                     {
                         icon: "😎",
-                        tariff: "😎 Личный сервер",
-                        name: "Личный сервер",
-                        price: 790,
-                        currency: "₽",
+                        tariff: "😎 Персональный",
+                        name: "Персональный",
+                        price: 8,
+                        currency: "€",
                         period: 12,
                         currencies: [
                             {
-                                currency: "€",
-                                price: 8,
+                                currency: "₽",
+                                price: 790,
                                 period: 12,
                                 plans: [
                                     {
                                         period: 6,
-                                        price: 10,
-                                        currency: "€"
+                                        price: 990,
+                                        currency: "₽"
                                     },
                                     {
                                         period: 1,
-                                        price: 15,
-                                        currency: "€"
+                                        price: 1490,
+                                        currency: "₽"
                                     },
                                 ],
                             }
@@ -1167,17 +1167,17 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         plans: [
                             {
                                 period: 6,
-                                price: 990,
-                                currency: "₽"
+                                price: 10,
+                                currency: "€"
                             },
                             {
                                 period: 1,
-                                price: 1490,
-                                currency: "₽"
+                                price: 15,
+                                currency: "€"
                             },
                         ],
                         selected: false,
-                    },
+                    }
                 ];
 
                 replace.firstElementChild.innerHTML = content;
