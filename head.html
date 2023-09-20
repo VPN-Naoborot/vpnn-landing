@@ -601,6 +601,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
           if (eventData["status"] == "fail") {
               sendAnalyticsEvent("send_form_all_fail");
+              return;
           } else {
               sendAnalyticsEvent("send_form_all");
           }
@@ -629,9 +630,9 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
           if (eventData["status"] == "success") {
                processPayment(eventData["paymentMethod"], eventData["email"], eventData["tarif"], eventData["billing_cycle"]?eventData["billing_cycle"]:undefined)
           }
-      } catch (error) {
+    } catch (error) {
           console.error(error);
-        }
+    }
  }
 /// TARIF BLOCK  
 
@@ -1376,7 +1377,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                         let captchaElement = document.getElementById("captcha_box");
                                         
                                         if (captchaElement) {
-                                            captchaElement.parentNode.removeChild(captchaElement);
+                                            //captchaElement.parentNode.removeChild(captchaElement);
                                         }
                                     }
                                     return "";
@@ -1620,32 +1621,46 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             console.log('formData:', formData);
             showLoader();
 
-            fetch('https://api.vpn-naoborot.online/v1/api/create-submission-webhook/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': '*/*'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                    message[status] = "fail";
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data);
-                showSuccess(); // Show success message or action
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                showError(); // Show error message or action
-                message[status] = "fail";
+            const TIMEOUT = 10000; // 10 секунд
+
+            const timeoutPromise = new Promise((_, reject) => {
+                setTimeout(() => {
+                    reject(new Error('Request timed out'));
+                }, TIMEOUT);
             });
-            console.log(message);
-            window.postMessage(JSON.stringify(message), config[environment].address);
+
+            Promise.race([
+                            fetch('https://api.vpn-naoborot.online/v1/api/create-submission-webhook/', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': '*/*'
+                                },
+                                body: JSON.stringify(formData)
+                            }),
+                            timeoutPromise
+                        ])
+                        .then(response => {
+                            if (!response.ok) {
+                                message.status = "fail";
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log(data);
+                            message.status = "success";
+                            showSuccess(); // Show success message or action
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            message.status = "fail";
+                            showError(); // Show error message or action
+                        })
+                        .finally(() => {
+                            console.log(message);
+                            window.postMessage(JSON.stringify(message), config[environment].address);
+                        });
         }
 
         const interval = setInterval(() => {
