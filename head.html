@@ -27,21 +27,41 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/91314673" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv"></script>
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv&onload=onloadCallback" async defer></script>
 <script type="text/javascript">
     var onloadCallback = function() {
       console.log('grecaptcha is ready!')
-       alert("grecaptcha is ready!");
+      alert("grecaptcha is ready!");
     };
+</script>
+
+
+<script>
+    const config = {
+        production: {
+            carouselBlockId: "block-03e781ba4c1647c3ae5897f233a03442",
+            buttonBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
+            replaceBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
+            address: "https://vpn-naoborot.online/"    
+        },
+        test: {
+            carouselBlockId: "block-cb7cecee864a47af815c267ff4a1b333",
+            buttonBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
+            replaceBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
+            address: "https://test-vpnn.super.site/"
+        }
+    };
+
+    const environment = window.location.hostname.includes("test-vpnn.super.site") ? "test" : "production";
+    
+    console.log('Environment: ', environment)
 </script>
 
 <script>
 function embed_reviews() {
   
     console.log('Embedding reviews')
-  
-//   document.getElementById("block-03e781ba4c1647c3ae5897f233a03442").innerHTML = '<div id="reviewsio-carousel-widget"></div>';
-    document.getElementById("block-cb7cecee864a47af815c267ff4a1b333").innerHTML = '<div id="reviewsio-carousel-widget"></div>';
+    document.getElementById(config[environment].carouselBlockId).innerHTML = '<div id="reviewsio-carousel-widget"></div>';
 
     new carouselInlineWidget('reviewsio-carousel-widget',{
         store: 'vpn-naoborot.online',
@@ -898,8 +918,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 if (buttonsCard) {
                     buttonsCard.forEach(button => {
                         button.addEventListener('click', event => {
-                            // document.querySelector('#block-0ce947a4080e4ac39624c276f7580991').scrollIntoView({behavior: "smooth"})
-                            document.querySelector('#block-a1ed09dd090f4b518a4514e8ad93b590').scrollIntoView({behavior: "smooth"})
+                            document.querySelector(config[environment].buttonBlockId).scrollIntoView({behavior: "smooth"})
                         })
                     })
                 }
@@ -1521,32 +1540,28 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
         function showSuccess() {
             console.log("Success!")
             const successContent = `<h1>✅ Отлично!</h1>
-<div>
-<br>
-Мы получили заявку и пришлём ключ на почту.
-<br>
-<br>
-<b>⚠️ Пожалуйста проверяйте папки СПАМ и РАССЫЛКИ</b>
-<br>
-<br>
-Спасибо!
-</div>`
+                                    <div>
+                                        <br>
+                                        Мы получили заявку и пришлём ключ на почту.
+                                        <br><br>
+                                        <b>⚠️ Пожалуйста проверяйте папки СПАМ и РАССЫЛКИ</b>
+                                        <br><br>
+                                        Спасибо!
+                                    </div>`
             document.getElementById('form-block').innerHTML = successContent
         }
 
         function showError() {
             console.log("Error!")
             const errorContent = `<h1>🚨 Ой-ой!</h1>
-<div>
-<br>
-Произошла какая-то ошибка. Пожалуйста обновите страницу и попробуйте снова.
-<br>
-<br>
-<b>Если проблема сохраняется, напишите нам <a href="mailto:support@vpn-naoborot.online">support@vpn-naoborot.online</a></b>
-<br>
-<br>
-Спасибо!
-</div>`
+                                <div>
+                                <br>
+                                Произошла какая-то ошибка. Пожалуйста обновите страницу и попробуйте снова.
+                                <br><br>
+                                <b>Если проблема сохраняется, напишите нам <a href="mailto:support@vpn-naoborot.online">support@vpn-naoborot.online</a></b>
+                                <br><br>
+                                Спасибо!
+                                </div>`
             document.getElementById('form-block').innerHTML = errorContent
         }
 
@@ -1630,13 +1645,11 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 message[status] = "fail";
             });
             console.log(message);
-            // window.postMessage(JSON.stringify(message), 'https://vpn-naoborot.online/');
-            window.postMessage(JSON.stringify(message), 'https://test-vpnn.super.site/');
+            window.postMessage(JSON.stringify(message), config[environment].address);
         }
 
         const interval = setInterval(() => {
-            // let replace = document.querySelector('#block-0ce947a4080e4ac39624c276f7580991');
-            let replace = document.querySelector('#block-a1ed09dd090f4b518a4514e8ad93b590');
+            let replace = document.querySelector(config[environment].replaceBlockId);
 
             if (replace) {
                 appendBlock(replace);
