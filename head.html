@@ -27,7 +27,18 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/91314673" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv&onload=onloadCallback" async defer></script>
+<!-- <script> const captchaId = "6LeHsj0oAAAAAGCzsJVPJyHBkAuUD6y9DRlY1UQn" </script> -->
+<!-- <script src="https://www.google.com/recaptcha/enterprise.js?render={captchaId}" async defer></script> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const captchaId = "6LeHsj0oAAAAAGCzsJVPJyHBkAuUD6y9DRlY1UQn";
+        let script = document.createElement('script');
+        script.src = `https://www.google.com/recaptcha/enterprise.js?render=${captchaId}`;
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+    });
+</script>
 <script type="text/javascript">
     var onloadCallback = function() {
       console.log('grecaptcha is ready!')
@@ -428,7 +439,7 @@ window.addEventListener("load", (event) => {
      
     console.log("showing Payment widget")
      
-    const tarif_id =  Object.keys(window.tarifs).filter(item => item == tarif)[0]
+    const tarif_id = Object.keys(window.tarifs).filter(item => item == tarif)[0]
     
     const periods = {
             "1-month": 1,
@@ -1004,7 +1015,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             <div class=" w-full  w-full px-2"></div>
             <div class="form-agreement">
                 <div id="agrrement_box">
-                    <div  class="form-agreement_item">
+                    <div  class="form-agreement_item" id="checkAgree">
                         <input id="agree" name="agree" type="checkbox"
                             class="custom-checkbox_input"><label
                             for="agree" class="custom-checkbox_label">
@@ -1013,7 +1024,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 </div>
             </div>
 
-            <div class=" border-b my-4" id="border-b my-4"></div>
+            <div class="border-b my-4" id="border-b my-4"></div>
             <div class="form-politic mb-3 "><p>🔒 Отправляя
                 заявку, вы принимаете <a href="https://vpn-naoborot.online/docs/privacy-policy"
                                             rel="nofollow noreferrer noopener" target="_blank">политику
@@ -1366,11 +1377,13 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                             captchaElement.id = "captcha_box";
                                             captchaElement.style = ".captcha_box";
                                             
+                                            console.log(captchaId);
                                             let formSubscriptionElement = document.getElementById("border-b my-4");
                                             formSubscriptionElement.appendChild(captchaElement);
                                             captchaWidgetId = grecaptcha.enterprise.render('captcha_box', {
-                                                'sitekey' : '6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv',
-                                                'action': 'SELECTED_FREE_PLAN',
+                                                // 'sitekey' : '6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv',
+                                                'sitekey' : captchaId,
+                                                'action' : 'SELECTED_FREE_PLAN',
                                             });
                                         }
                                     } else {
@@ -1471,7 +1484,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     const activePlan = plans.filter(item => item.selected === true)[0]
                     const agreement_box = document.querySelector('#agrrement_box');
 
-                    const inputAgree = `<div  class="form-agreement_item">
+                    const inputAgree = `<div  class="form-agreement_item" id="checkAgree">
                                             <input id="agree" name="agree" type="checkbox"
                                                 class="custom-checkbox_input"><label
                                                 for="agree" class="custom-checkbox_label">
@@ -1500,7 +1513,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             if (emailInputElement) {  // убедимся, что элемент действительно существует
                 emailInputElement.addEventListener('blur', function() {
                     const email = emailInputElement.value;
-                    const existingHint = document.querySelector('.hint-message');
+                    const existingHint = document.querySelector('.hint-message-InputEmail');
                     
                     if (isValidEmail(email) && existingHint) {
                         existingHint.remove();
@@ -1508,6 +1521,20 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     }
                 });
             }
+
+            const checkboxDiv = document.getElementById('checkAgree');
+            const checkbox = document.getElementById('agree');
+            if (checkboxDiv) {  // убедимся, что элемент действительно существует
+                checkbox.addEventListener('change', function() {
+                    const existingHintAgree = document.querySelector('.hint-message-checkAgree');
+                    
+                    if (checkbox.checked && existingHintAgree) {
+                        existingHintAgree.remove();
+                        checkboxDiv.classList.remove('invalid-agree'); // исправленная строка
+                    }
+                });
+            }
+
         }
 
         function isValidEmail(email) {
@@ -1519,11 +1546,12 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             const inputElement = document.getElementById(elementId);
             const hintElement = document.createElement('div');
             
-            hintElement.className = 'hint-message';
+            hintElement.className = `hint-message-${elementId}`;
             hintElement.style.color = 'red';
+            hintElement.style.fontSize = '14px';
             hintElement.textContent = message;
 
-            const existingHint = document.querySelector('.hint-message');
+            const existingHint = document.querySelector(`.hint-message-${elementId}`);
             if (existingHint) {
                 existingHint.remove();
             }
@@ -1576,15 +1604,27 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             const planName = planElement ? planElement.innerText : "";
             const paymentMethod = paymentMethodElement ? paymentMethodElement.innerText : "Зарубежной картой";
             const period = periodElement ? periodElement.innerText : "1 Год";
-            const email = emailInputElement.value;
-            const existingHint = document.querySelector('.hint-message');
             
+            const email = emailInputElement.value;
+            const existingHintEmail = document.querySelector('.hint-message-InputEmail');
             if (!isValidEmail(email)) {
                 addHint('InputEmail', 'Пожалуйста, введите корректный email');
                 document.getElementById('InputEmail').classList.add('invalid-input');
                 return;
-            } else if (existingHint) {
-                existingHint.remove();
+            } else if (existingHintEmail) {
+                existingHintEmail.remove();
+            }
+
+            const checkbox = document.getElementById('agree');
+            const existingHintAgree = document.querySelector('.hint-message-checkAgree');
+            console.log("Checkbox checked status:", checkbox.checked);
+            
+            if (!checkbox.checked) {
+                addHint('checkAgree', 'Пожалуйста, согласитесь с условиями перед отправкой формы!');
+                document.getElementById('checkAgree').classList.add('invalid-agree');
+                return;
+            } else if (existingHintAgree) {
+                existingHintAgree.remove();
             }
 
             let formData = {
