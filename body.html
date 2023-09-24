@@ -1,0 +1,78 @@
+<!-- Google Tag Manager (noscript) -->
+<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRTLL9X"-->
+<!--height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- Google Tag Manager (noscript) -->
+<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD9GNBV"-->
+<!--height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!--REVIEWS.IO-->
+<script defer src="https://widget.reviews.io/carousel-inline-iframeless/dist.js?_t=2022110110"></script>
+<link rel="stylesheet" href="https://assets.reviews.io/css/widgets/carousel-widget.css?_t=2022110110">
+
+<!--<link rel="preload" href="https://assets.reviews.io/css/widgets/carousel-widget.css?_t=2022110110" as="style" onload="this.onload=null;this.rel='stylesheet'">-->
+<!--<noscript><link rel="stylesheet" href="https://assets.reviews.io/css/widgets/carousel-widget.css?_t=2022110110"></noscript>-->
+
+<link rel="stylesheet" href="https://assets.reviews.io/iconfont/reviewsio-icons/style.css?_t=2022110110"> 
+
+
+
+<script>
+// We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/y5urxrqf'
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){ setTimeout(function () {var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/y5urxrqf';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}, 5000);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+</script>
+<script src="https://cdn.jsdelivr.net/gh/VPN-Naoborot/vpnn-landing@main/dist/assets/js/app.21212.js" crossorigin="anonymous"></script>
+
+
+
+<!--super embedder-->
+<script>
+function clearBlock(el) {
+  const node = el.parentElement.parentElement;
+  node.innerHTML = '';
+  return node;
+}
+
+const SELECTOR = 'code:not([super-embed-seen])';
+
+function setupEmbeds() {
+  document.querySelectorAll(SELECTOR).forEach((node) => {
+    node.setAttribute('super-embed-seen', 1);
+    if (node.innerText.startsWith('super-embed:')) {
+      const code = node.innerText.replace('super-embed:', '');
+      const parentNode = clearBlock(node);
+      parentNode.innerHTML = code;
+      parentNode.querySelectorAll('script').forEach((script) => {
+        if (!script.src && script.innerText) {
+          eval(script.innerText);
+        } else {
+          const scr = document.createElement('script');
+          Array.from(script.attributes).forEach(attr => {
+            scr.setAttribute(attr.name, attr.value);
+          });
+          document.body.appendChild(scr);
+        }
+      })
+    }
+  });
+}
+
+setupEmbeds();
+
+var observer = new MutationObserver(function(mutations) {
+  if (document.querySelector(SELECTOR)) {
+    setupEmbeds();
+  }
+});
+
+observer.observe(document, {
+  attributes: false,
+  childList: true,
+  characterData: false,
+  subtree: true
+});
+</script>
