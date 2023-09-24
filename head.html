@@ -27,25 +27,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/91314673" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-<!-- <script> const captchaId = "6LeHsj0oAAAAAGCzsJVPJyHBkAuUD6y9DRlY1UQn" </script> -->
-<!-- <script src="https://www.google.com/recaptcha/enterprise.js?render={captchaId}" async defer></script> -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const captchaId = "6LeHsj0oAAAAAGCzsJVPJyHBkAuUD6y9DRlY1UQn";
-        let script = document.createElement('script');
-        script.src = `https://www.google.com/recaptcha/enterprise.js?render=${captchaId}`;
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-    });
-</script>
-<script type="text/javascript">
-    var onloadCallback = function() {
-      console.log('grecaptcha is ready!')
-      alert("grecaptcha is ready!");
-    };
-</script>
-
+<script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 
 <script>
     const config = {
@@ -1377,13 +1359,15 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                             captchaElement.id = "captcha_box";
                                             captchaElement.style = ".captcha_box";
                                             
-                                            console.log(captchaId);
+                                            // console.log(captchaId);
+                                            
                                             let formSubscriptionElement = document.getElementById("border-b my-4");
                                             formSubscriptionElement.appendChild(captchaElement);
                                             captchaWidgetId = grecaptcha.enterprise.render('captcha_box', {
-                                                // 'sitekey' : '6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv',
-                                                'sitekey' : captchaId,
+                                                'sitekey' : "6LfPLEIoAAAAAEn8NaCcwWtdv0qTUFmAAKF_ufhW",
                                                 'action' : 'SELECTED_FREE_PLAN',
+                                                'data-sitekey' : "6LfPLEIoAAAAAEn8NaCcwWtdv0qTUFmAAKF_ufhW",
+                                                'data-action' : "SELECTED_FREE_PLAN"
                                             });
                                         }
                                     } else {
@@ -1501,7 +1485,6 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                             }
                         } else {
                             cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value))
-
                         }
                     });
                     addEventsToSelections();
