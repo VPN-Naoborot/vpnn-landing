@@ -1006,7 +1006,9 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 </div>
             </div>
 
+            <div class="captcha-container" id="captcha-container"></div>
             <div class="border-b my-4" id="border-b my-4"></div>
+            
             <div class="form-politic mb-3 "><p>🔒 Отправляя
                 заявку, вы принимаете <a href="https://vpn-naoborot.online/docs/privacy-policy"
                                             rel="nofollow noreferrer noopener" target="_blank">политику
@@ -1358,10 +1360,16 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                             captchaElement = document.createElement("div");
                                             captchaElement.id = "captcha_box";
                                             captchaElement.style = ".captcha_box";
+
+                                            textCaptchaElement = document.createElement("div");
+                                            textCaptchaElement.innerText = "Подтвердите, что Вы не робот";
+                                            textCaptchaElement.id = "captcha_text";
+                                            // textCaptchaElement.style = ".form-group small";
                                             
                                             // console.log(captchaId);
                                             
-                                            let formSubscriptionElement = document.getElementById("border-b my-4");
+                                            let formSubscriptionElement = document.getElementById("captcha-container");
+                                            formSubscriptionElement.appendChild(textCaptchaElement);
                                             formSubscriptionElement.appendChild(captchaElement);
                                             captchaWidgetId = grecaptcha.enterprise.render('captcha_box', {
                                                 'sitekey' : "6LfPLEIoAAAAAEn8NaCcwWtdv0qTUFmAAKF_ufhW",
@@ -1374,7 +1382,11 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                         let captchaElement = document.getElementById("captcha_box");
                                         
                                         if (captchaElement) {
-                                            //captchaElement.parentNode.removeChild(captchaElement);
+                                            // captchaElement.parentNode.removeChild(captchaElement);
+                                            let element = document.getElementById("captcha-container");
+                                            while (element.firstChild) {
+                                                element.removeChild(element.firstChild);
+                                            }
                                         }
                                     }
                                     return "";
