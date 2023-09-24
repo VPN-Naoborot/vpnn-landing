@@ -1,0 +1,1650 @@
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3HX94WD1PS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3HX94WD1PS');
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(91314673, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/91314673" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script>
+
+function embed_reviews() {
+  
+  console.log('Embedding reviews')
+  
+  document.getElementById("block-03e781ba4c1647c3ae5897f233a03442").innerHTML = '<div id="reviewsio-carousel-widget"></div>';
+
+    new carouselInlineWidget('reviewsio-carousel-widget',{
+        /*Your REVIEWS.io account ID:*/
+        store: 'vpn-naoborot.online',
+        sku: '',
+        lang: 'en',
+        carousel_type: 'topHeader',
+        styles_carousel: 'CarouselWidget--topHeader',
+  
+        /*Widget settings:*/
+        options:{
+          general:{
+            /*What reviews should the widget display? Available options: company, product, third_party. You can choose one type or multiple separated by comma.*/
+            review_type: 'company, product',
+            /*Minimum number of reviews required for widget to be displayed*/
+            min_reviews: '1',
+            /*Maximum number of reviews to include in the carousel widget.*/
+            max_reviews: '20',
+            address_format: 'CITY, COUNTRY',
+            /*Carousel auto-scrolling speed. 3000 = 3 seconds. If you want to disable auto-scroll, set this value to false.*/
+            enable_auto_scroll: 10000,
+          },
+          header:{
+            /*Show overall rating stars*/
+            enable_overall_stars: true,
+            rating_decimal_places: 2,
+          },
+          reviews: {
+            /*Show customer name*/
+            enable_customer_name: true,
+            /*Show customer location*/
+            enable_customer_location: false,
+            /*Show "verified review" badge*/
+            enable_verified_badge: true,
+            /*Show "I recommend this product" badge (Only for product reviews)*/
+            enable_recommends_badge: true,
+            /*Show photos attached to reviews*/
+            enable_photos: true,
+            /*Show videos attached to reviews*/
+            enable_videos: true,
+            /*Show when review was written*/
+            enable_review_date: true,
+            /*Hide reviews written by the same customer (This may occur when customer reviews multiple products)*/
+            disable_same_customer: true,
+            /*Minimum star rating*/
+            min_review_percent: 4,
+            /*Show 3rd party review source*/
+            third_party_source: true,
+            /*Hide reviews without comments (still shows if review has a photo)*/
+            hide_empty_reviews: true,
+            /*Show product name*/
+            enable_product_name: true,
+            /*Show only reviews which have specific tags (multiple semicolon separated tags allowed i.e tag1;tag2)*/
+            tags: "",
+            /*Show branch, only one input*/
+            branch: "",
+            enable_branch_name: false,
+          },
+          popups: {
+            /*Make review items clickable (When they are clicked, a popup appears with more information about a customer and review)*/
+            enable_review_popups:  true,
+            /*Show "was this review helpful" buttons*/
+            enable_helpful_buttons: true,
+            /*Show how many times review was upvoted as helpful*/
+            enable_helpful_count: true,
+            /*Show share buttons*/
+            enable_share_buttons: true,
+          },
+      },
+      translations: {
+        verified_customer:  "Verified Customer",
+      },
+      styles:{
+        /*Base font size is a reference size for all text elements. When base value gets changed, all TextHeading and TexBody elements get proportionally adjusted.*/
+        '--base-font-size': '16px',
+        '--base-maxwidth':'100%',
+  
+        /*Logo styles:*/
+        '--reviewsio-logo-style':'var(--logo-normal)',
+  
+        /*Star styles:*/
+        '--common-star-color':'#3B82F6',
+        '--common-star-disabled-color':' rgba(0,0,0,0.25)',
+        '--medium-star-size':' 22px',
+        '--small-star-size':'19px', /*Modal*/
+        '--x-small-star-size':'16px',
+        '--x-small-star-display':'inline-flex',
+  
+        /*Header styles:*/
+        '--header-order':'1',
+        '--header-width':'160px',
+        '--header-bg-start-color':'transparent',
+        '--header-bg-end-color':'transparent',
+        '--header-gradient-direction':'135deg',
+        '--header-padding':'0.5em',
+        '--header-border-width':'0px',
+        '--header-border-color':'rgba(0,0,0,0.1)',
+        '--header-border-radius':'0px',
+        '--header-shadow-size':'0px',
+        '--header-shadow-color':'rgba(0, 0, 0, 0.1)',
+  
+        /*Header content styles:*/
+        '--header-star-color':'inherit',
+        '--header-disabled-star-color':'inherit',
+        '--header-heading-text-color':'inherit',
+        '--header-heading-font-size':'inherit',
+        '--header-heading-font-weight':'inherit',
+        '--header-heading-line-height':'inherit',
+        '--header-heading-text-transform':'inherit',
+        '--header-subheading-text-color':'inherit',
+        '--header-subheading-font-size':'inherit',
+        '--header-subheading-font-weight':'inherit',
+        '--header-subheading-line-height':'inherit',
+        '--header-subheading-text-transform':'inherit',
+  
+        /*Review item styles:*/
+        '--item-maximum-columns':'5',/*Must be 3 or larger*/
+        '--item-background-start-color':'transparent',
+        '--item-background-end-color':'transparent',
+        '--item-gradient-direction':'135deg',
+        '--item-padding':'0.5em',
+        '--item-border-width':'0px',
+        '--item-border-color':'rgba(0,0,0,0.1)',
+        '--item-border-radius':'0px',
+        '--item-shadow-size':'0px',
+        '--item-shadow-color':'rgba(0,0,0,0.1)',
+  
+        /*Heading styles:*/
+        '--heading-text-color':' #0E1311',
+        '--heading-text-font-weight':' 600',
+        '--heading-text-font-family':' inherit',
+        '--heading-text-line-height':' 1.4',
+        '--heading-text-letter-spacing':'0',
+        '--heading-text-transform':'none',
+  
+        /*Body text styles:*/
+        '--body-text-color':' #0E1311',
+        '--body-text-font-weight':'400',
+        '--body-text-font-family':' inherit',
+        '--body-text-line-height':' 1.4',
+        '--body-text-letter-spacing':'0',
+        '--body-text-transform':'none',
+  
+        /*Scroll button styles:*/
+        '--scroll-button-icon-color':'#0E1311',
+        '--scroll-button-icon-size':'24px',
+        '--scroll-button-bg-color':'transparent',
+  
+        '--scroll-button-border-width':'0px',
+        '--scroll-button-border-color':'rgba(0,0,0,0.1)',
+  
+        '--scroll-button-border-radius':'60px',
+        '--scroll-button-shadow-size':'0px',
+        '--scroll-button-shadow-color':'rgba(0,0,0,0.1)',
+        '--scroll-button-horizontal-position':'0px',
+        '--scroll-button-vertical-position':'0px',
+  
+        /*Badge styles:*/
+        '--badge-icon-color':'#0E1311',
+        '--badge-icon-font-size':'15px',
+        '--badge-text-color':'#0E1311',
+        '--badge-text-font-size':'inherit',
+        '--badge-text-letter-spacing':'inherit',
+        '--badge-text-transform':'inherit',
+  
+        /*Author styles:*/
+        '--author-font-size':'inherit',
+        '--author-font-weight':'inherit',
+        '--author-text-transform':'inherit',
+  
+        /*Product photo or review photo styles:*/
+        '--photo-video-thumbnail-size':'60px',
+        '--photo-video-thumbnail-border-radius':'0px',
+  
+        /*Popup styles:*/
+        '--popup-backdrop-color':'rgba(0,0,0,0.75)',
+        '--popup-color':'#ffffff',
+        '--popup-star-color':'inherit',
+        '--popup-disabled-star-color':'inherit',
+        '--popup-heading-text-color':'inherit',
+        '--popup-body-text-color':'inherit',
+        '--popup-badge-icon-color':'inherit',
+        '--popup-badge-icon-font-size':'19px',
+        '--popup-badge-text-color':'inherit',
+        '--popup-badge-text-font-size':'14px',
+        '--popup-border-width':'0px',
+        '--popup-border-color':'rgba(0,0,0,0.1)',
+        '--popup-border-radius':'0px',
+        '--popup-shadow-size':'0px',
+        '--popup-shadow-color':'rgba(0,0,0,0.1)',
+        '--popup-icon-color':'#0E1311',
+  
+        /*Tooltip styles:*/
+        '--tooltip-bg-color':'#0E1311',
+        '--tooltip-text-color':'#ffffff',
+      },
+    });
+}
+
+
+
+// function embedTestForm() {
+      
+//       testFormUrl = "https://notionforms.io/forms/ostavte-zaiavku-2-2"
+      
+//       iframe = document.querySelector("#block-0ce947a4080e4ac39624c276f7580991 > div > div > div > iframe")
+//       if (!iframe){
+//         console.log("no form found yet")
+//         return
+//       }
+      
+//       iframe.src = testFormUrl
+//       clearInterval(window.t);
+// }
+ 
+window.addEventListener("load", (event) => {
+  window.test = (window.location.hash.includes("debug") || window.location.search.includes("debug"))
+    
+  console.log("Loaded. Test:", window.test)
+  setTimeout(function () {embed_reviews()},1000)
+  // setTimeout(function () {embedTestForm()},3000)
+  // if (window.test) {
+  //   window.t = setInterval(embedTestForm, 1000);
+  // }
+})
+</script>
+
+
+<script>
+  window.intercomSettings = {
+    api_base: "https://api-iam.intercom.io",
+    app_id: "y5urxrqf"
+  };
+</script>
+
+<script defer src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
+<!--<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+
+<script>
+
+</script>
+
+
+<script>
+  window.addEventListener('message', handleMessage, false);
+    
+  function sendAnalyticsEvent(event_label) {
+      if (window.test) {
+          console.log("Test mode - analytics skipped");
+          return;
+      }
+      
+      gtag('event', event_label);
+      ym(91314673,'reachGoal', event_label)
+  }
+    
+    
+    window.tarifs = {
+        "📂 Для документов" : {
+            "description": "VPN Наоборот – Для документов.\
+ Ежемесячный платёж.",
+            "rub-descriptions": {
+              "1-month":  "VPN Наоборот – Для документов.\
+ Ежемесячный платёж.",
+              "6-month": "VPN Наоборот – Для документов.\
+ Платёж раз в 6 месяцев.",
+              "1-year":  "VPN Наоборот – Для документов.\
+ Ежегодный платёж."
+            },
+            "price": 290,
+            "rub-prices": {
+              "1-month": 290,
+              "6-month": 1140,
+              "1-year": 1800,
+            },
+            "stripe-url": "https://buy.stripe.com/bIYbL00OY8JH6o8bII",
+            "stripe-urls": {
+              "1-month": "https://buy.stripe.com/eVacP42X6bVTbIs5kw",
+              "6-month": "https://buy.stripe.com/14k5mC69igc96o814f",
+              "1-year": "https://buy.stripe.com/9AQ6qG1T28JHfYI8wG",
+            },
+            currencies: [
+                {
+                    "stripe-url": "https://buy.stripe.com/9AQ6qG1T28JHfYI8wG",
+                    currency: "€",
+                    price: 1,
+                    plans: [
+                        {
+                            "stripe-url": "https://buy.stripe.com/14k5mC69igc96o814f",
+                            period: 6,
+                            price: 2,
+                            currency: "€"
+                        },
+                        {
+                            period: 1,
+                            price: 3,
+                            currency: "€",
+                            "stripe-url": "https://buy.stripe.com/eVacP42X6bVTbIs5kw",
+                        },
+                    ],
+
+                }
+            ],
+            plans: [
+                {
+                    period: 6,
+                    price: 190,
+                    currency: "₽"
+                },
+                {
+                    period: 1,
+                    price: 290,
+                    currency: "₽"
+                },
+            ],
+        },
+        "📺 Для Видео": {
+            "description": "VPN Наоборот – Для видео. Ежемесячный платёж.",
+            "rub-descriptions": {
+              "1-month":  "VPN Наоборот – Для видео.\
+ Ежемесячный платёж.",
+              "6-month": "VPN Наоборот – Для видео. \
+ Платёж раз в 6 месяцев.",
+              "1-year":  "VPN Наоборот – Для видео. \
+ Ежегодный платёж."
+            },
+            "price": 590,
+            "rub-prices": {
+              "1-month": 590,
+              "6-month": 2700,
+              "1-year": 3480,
+            },
+            "stripe-url": "https://buy.stripe.com/aEU6qGeFO1hf27S5kl",
+            "stripe-urls": {
+              "1-month": "https://buy.stripe.com/fZeeXc1T26Bz7sc3cq",
+              "6-month": "https://buy.stripe.com/00gdT869i2lj5k4cMZ",
+              "1-year": "https://buy.stripe.com/9AQ02icxG4trfYI6ov",
+            },
+            currencies: [
+                {
+                    "stripe-url": "https://buy.stripe.com/9AQ02icxG4trfYI6ov",
+                    currency: "€",
+                    price: 1,
+                    plans: [
+                        {
+                            "stripe-url": "https://buy.stripe.com/00gdT869i2lj5k4cMZ",
+                            period: 6,
+                            price: 2,
+                            currency: "€"
+                        },
+                        {
+                            period: 1,
+                            price: 3,
+                            currency: "€",
+                            "stripe-url": "https://buy.stripe.com/fZeeXc1T26Bz7sc3cq",
+                        },
+                    ],
+
+                }
+            ],
+            plans: [
+                {
+                    period: 6,
+                    price: 190,
+                    currency: "₽"
+                },
+                {
+                    period: 1,
+                    price: 290,
+                    currency: "₽"
+                },
+            ],
+        },
+        "😎 Личный сервер": {
+            "description": "VPN Наоборот – Личный сервер. Ежемесячный платёж.",
+            "rub-descriptions": {
+              "1-month":  "VPN Наоборот – Личный сервер.\
+ Ежемесячный платёж.",
+              "6-month": "VPN Наоборот – Личный сервер.\
+ Платёж раз в 6 месяцев.",
+              "1-year":  "VPN Наоборот – Личный сервер.\
+ Ежегодный платёж."
+            },
+            "price": 1490,
+            "rub-prices": {
+              "1-month": 1490,
+              "6-month": 5940,
+              "1-year": 9480,
+            },
+            "stripe-url":"https://buy.stripe.com/cN2aGWapy8JHaEobIL",
+            "stripe-urls": {
+              "1-month": "https://buy.stripe.com/00g16mapy0dbh2MdQS",
+              "6-month": "https://buy.stripe.com/fZe5mC41a4trh2M28c",
+              "1-year": "https://buy.stripe.com/8wMaGWbtC3pn13O3cl",
+            },
+            currencies: [
+                {
+                    "stripe-url": "https://buy.stripe.com/8wMaGWbtC3pn13O3cl",
+                    currency: "€",
+                    price: 1.5,
+                    plans: [
+                        {
+                            "stripe-url": "https://buy.stripe.com/fZe5mC41a4trh2M28c",
+                            period: 6,
+                            price: 2,
+                            currency: "€"
+                        },
+                        {
+                            period: 1,
+                            price: 3,
+                            currency: "€",
+                            "stripe-url": "https://buy.stripe.com/00g16mapy0dbh2MdQS",
+                        },
+                    ],
+                }
+            ],
+            plans: [
+                {
+                    period: 6,
+                    price: 190,
+                    currency: "₽"
+                },
+                {
+                    period: 1,
+                    price: 290,
+                    currency: "₽"
+                },
+            ],
+        },
+    }
+
+    
+    
+  // redirecting to lk
+  // if (!window.test) return
+  // show loader and every 5 seconds try to get token for email. Once got token, redirect to lk
+    
+  function showPaymentWidget(email, tarif, billing_cycle = "1-month") {
+     
+     console.log("showing Payment widget")
+     
+    const tarif_id =  Object.keys(window.tarifs).filter(item => item == tarif)[0]
+    
+    const periods = {
+            "1-month": 1,
+            "6-month": 6,
+            "1-year": 12,
+          }
+          
+    const price = window.tarifs[tarif]["rub-prices"][billing_cycle]
+    const period = periods[billing_cycle]
+    const description = window.tarifs[tarif]["rub-descriptions"][billing_cycle]
+     
+     pay(email, price, description, tarif_id, period);
+  }
+  
+  function getStripePaymentLink(email, tarif, billing_cycle) {
+    if (!billing_cycle) {
+      billing_cycle = "1-month"
+    }
+    let encodedEmail = btoa(email);
+
+// Replace + with -, / with _ and = with nothing to make it URL safe
+let urlSafeEncodedEmail = encodedEmail.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+
+    url = "https://vpnnonline.com?link=" +  tarifs[tarif]["stripe-urls"][billing_cycle] + "?prefilled_email=" + encodeURIComponent(email) + "&client_reference_id=" + urlSafeEncodedEmail
+
+    console.log("Redirecting to ", url)
+
+    return url
+  }
+  const API_URL = "https://api.vpn-naoborot.online/v1/";
+
+  const redirectWithDelay = (email) => {
+    const interval = setInterval(async () => {
+        await fetchUser(email)
+    }, 10000)
+}
+
+
+const fetchUser = async (email) => {
+    return await fetch(API_URL + `get-token-by-email/?email=${encodeURIComponent(email)}`).then(result => {
+        return result.json();
+    }).then(response => {
+        if (response.code === 200 && response.auth_token && response.auth_token !== "") {
+            window.location = "https://lk.vpn-naoborot.online/?auth_token=" + response.auth_token
+        }
+        return response
+    })
+}
+
+
+this.pay = function (email, price, description, tarif_id, period = 1) {
+    
+    var widget = new cp.CloudPayments();
+    console.log(window.attempt)
+    
+  
+
+    var receipt = {
+            Items: [//товарные позиции
+                 {
+                    label: description, //наименование товара
+                    price: price, //цена
+                    quantity: 1.00, //количество
+                    amount: price, //сумма
+                    vat: null, //ставка НДС
+                    method: 4, // тег-1214 признак способа расчета - признак способа расчета
+                    object: 4, // тег-1212 признак предмета расчета - признак предмета товара, работы, услуги, платежа, выплаты, иного предмета расчета
+                }
+            ],
+            CalculationPlace: "vpn-naoborot.online",
+            taxationSystem: 2, //система налогообложения; необязательный, если у вас одна система налогообложения
+            email: email, //e-mail покупателя, если нужно отправить письмо с чеком
+            isBso: false, //чек является бланком строгой отчетности
+            amounts:
+            {
+                electronic: price, // Сумма оплаты электронными деньгами
+                advancePayment: 0.00, // Сумма из предоплаты (зачетом аванса) (2 знака после запятой)
+                credit: 0.00, // Сумма постоплатой(в кредит) (2 знака после запятой)
+                provision: 0.00 // Сумма оплаты встречным предоставлением (сертификаты, др. мат.ценности) (2 знака после запятой)
+            }
+        };
+
+        var data = {};
+        data.CloudPayments = {
+            CustomerReceipt: receipt, //чек для первого платежа
+            recurrent: {
+             interval: 'Month',
+             period: period, 
+             customerReceipt: receipt //чек для регулярных платежей
+             }
+             }; //создание ежемесячной подписки
+        data['tarif_id'] = tarif_id;
+
+        widget.pay('charge', 
+        { // options
+            publicId: 'pk_e7d787f0deecc2d9f27183be0841b', //id из личного кабинета
+            description: description, //назначение
+            amount: price, //сумма
+            currency: 'RUB', //валюта
+            //invoiceId: '1234567', //номер заказа  (необязательно)
+            accountId: email, //идентификатор плательщика (обязательно для создания подписки)
+            email: email,
+            data: data,
+        },
+        {
+            onSuccess: async function (options) { // success
+            
+            
+            // start redirecting to lk
+              //if (window.test) {
+                    await fetchUser(email);
+                //}
+            
+            
+                    console.log("Payment succeded!");
+                    if (!window.location.hash.includes("debug")){
+                        sendAnalyticsEvent("successful_payment");
+                    }
+//                     window.location.href = "https://vpn-naoborot.online/"
+                }
+        }
+        )
+    };
+
+
+
+
+  
+  function processPayment(paymentMethod, email, tarif, billing_cycle){
+    
+    console.log('processPayment', paymentMethod)
+    if (paymentMethod == 'Зарубежной картой') {
+      URL = getStripePaymentLink(email, tarif, billing_cycle)
+      window.open(URL, '_blank');
+       //if (window.test || getFormName(tarif) == "form_video") {
+            redirectWithDelay(email)
+        //}
+      // after 5 seconds delay start redirecting to lk
+      
+      return
+    }
+    
+    
+    showPaymentWidget(email, tarif, billing_cycle)  
+    
+  }
+  
+  function getFormName(name){
+    let gevent = "";
+    switch (name){
+            case '🤝 Бесплатный':
+                gevent = "form_free"
+                break;
+              case '📂 Для документов':
+                gevent = "form_docs"
+                break;
+              case '📺 Для Видео':
+                gevent = "form_video"
+                break;
+              case '😎 Личный сервер':
+                gevent = "form_server"
+                break;
+          }
+          return  gevent
+}
+
+
+
+  
+  
+  function handleMessage(event) {  
+      try {
+
+          if (event.origin != "https://noteforms.com") { console.log("wrong origin:",event.origin); return; }  
+
+          console.log("Parent got message: ", event)
+
+          if (typeof event.data !== 'string') {
+              console.log("This is not my event:", event.data);
+              return;
+          }
+          
+          let eventData;
+          try {
+              eventData = JSON.parse(event.data);
+          } catch (error) {
+              console.error("Failed to parse event data:", error);
+              return;
+          }
+          console.log(eventData)
+
+          if (eventData["status"] == "fail") {
+              sendAnalyticsEvent("send_form_all_fail");
+          } else {
+              sendAnalyticsEvent("send_form_all");
+          }
+
+
+          var gevent = "";
+
+          switch (eventData["tarif"]){
+              case '🤝 Бесплатный':
+                gevent = "send_form_free"
+                break;
+              case '📂 Для документов':
+                gevent = "send_form_docs"
+                break;
+              case '📺 Для Видео':
+                gevent = "send_form_video"
+                break;
+              case '😎 Личный сервер':
+                gevent = "send_form_server"
+                break;
+          }
+
+          if (eventData["status"] == "fail") {
+              gevent = gevent + "_fail";
+          }
+
+          sendAnalyticsEvent(gevent);
+
+
+          if (eventData["status"] == "success") {
+               processPayment(eventData["paymentMethod"], eventData["email"], eventData["tarif"], eventData["billing_cycle"]?eventData["billing_cycle"]:undefined)
+          }
+      } catch (error) {
+          console.error(error);
+        }
+ }
+ 
+
+
+
+
+/// TARIF BLOCK  
+
+    window.addEventListener('load', () => {
+
+        let defaultCurrency = localStorage.getItem('defaultCurrency')
+        if (!defaultCurrency) {
+            defaultCurrency = '€';
+            localStorage.setItem('defaultCurrency', '€')
+        }
+        const content = `<div class="container">
+<div class="row">
+    <div class="col-12 d-flex w-100 justify-content-center">
+
+               <ul class="custom-switch-box ">
+                      <li class="radio-currency">
+                        <input id="s1" type="radio"   data-item data-value="€" data-name="Евро" ${defaultCurrency === '€' ? `checked` : ''}  name="radio" class="switch " >
+                        <label for="s1">В Евро</label>
+                      </li>
+                      <li class="radio-currency">
+                        <input id="s2" type="radio" data-item data-value="₽" data-name="Рубли" ${defaultCurrency === '₽' ? `checked` : ''}  name="radio" class="switch " >
+                        <label for="s2">В Рублях</label>
+                      </li>
+              </ul>
+    </div>
+</div>
+<div class="cards row">
+</div>
+</div>`;
+        const appendBlock = (replace) => {
+            replace.innerHTML = content;
+            const items = [
+                {
+                    icon: "🤝",
+                    name: "Бесплатный",
+                    image: "/assets/images/personal.png",
+                    description: "Для документов, ЖКХ, налогов, кадастра и т.п.",
+                    price: "Бесплатно",
+                    currency: "₽",
+                    period: 12,
+                    currencies: [
+                        {
+                            currency: "€",
+                            price: "Бесплатно",
+                            plans: []
+                        },
+                    ],
+                    plans: [],
+                    tariff: "🤝  Бесплатный",
+                    secondary_info: "Будем рады вашим донатам",
+                    button: "Подключиться",
+                    features: ["🐢 1 Мбит/с", "✅ Доступ к сайтам", "⏳ Ключ придёт в течение суток", "🛑 Работает 1 день", "🛑 Нельзя смотреть видео и качать большие файлы"],
+                    speed: "~1 Мбит/с",
+                    plan_color: "color-yellow",
+                    button_color: ""
+                },
+                {
+                    name: "Для документов",
+                    tariff: "📂  Для документов",
+                    image: "/assets/images/pro.png",
+                    icon: "📂",
+                    description: "Как бесплатный, но чуть стабильнее.",
+                    price: 150,
+                    currency: "₽",
+                    period: 12,
+                    currencies: [
+                        {
+                            currency: "€",
+                            price: 1.5,
+                            plans: [
+                                {
+                                    period: 6,
+                                    price: 2,
+                                    currency: "€"
+                                },
+                                {
+                                    period: 1,
+                                    price: 3,
+                                    currency: "€"
+                                },
+                            ],
+
+                        }
+                    ],
+                    plans: [
+                        {
+                            period: 6,
+                            price: 190,
+                            currency: "₽"
+                        },
+                        {
+                            period: 1,
+                            price: 290,
+                            currency: "₽"
+                        },
+                    ],
+                    secondary_info: "",
+                    button: "Подключиться",
+                    features: ["🚜 2 Мбит/с", "✅ Доступ к сайтам", "✅ Ключ придёт за пару минут",
+                        "✅ Работает, пока активна подписка",
+                        "🛑 Нельзя смотреть видео и качать большие файлы",
+                        "💙 Заботливая поддержка"
+                    ],
+                    speed: "~2 Мбит/с",
+                    plan_color: "color-blue",
+                    button_color: "",
+
+                },
+                {
+                    icon: "📺",
+                    name: "Для видео",
+                    tariff: "📺  Для видео",
+                    image: "/assets/images/team.png",
+                    description: "Для документов, развлечений и удалённой учёбы.",
+                    price: 290,
+                    currency: "₽",
+                    period: 12,
+                    currencies: [
+                        {
+                            currency: "€",
+                            price: 3,
+                            period: 12,
+                            plans: [
+                                {
+                                    period: 6,
+                                    price: 4.5,
+                                    currency: "€"
+                                },
+                                {
+                                    period: 1,
+                                    price: 6,
+                                    currency: "€"
+                                },
+                            ],
+
+                        }
+                    ],
+                    plans: [
+                        {
+                            period: 6,
+                            price: 450,
+                            currency: "₽"
+                        },
+                        {
+                            period: 1,
+                            price: 590,
+                            currency: "₽"
+                        },
+                    ],
+                    secondary_info: "",
+                    button: "Подключиться",
+                    features: ["🏎️ 10 Мбит/с", "✅ Доступ к сайтам", "✅ Ключ придёт за пару минут",
+                        "✅ Работает, пока активна подписка",
+                        "✅ Можно смотреть видео и качать большие файлы",
+                        "💙 Заботливая поддержка",
+                        "📶 Высокая скорость и стабильность"
+                    ],
+                    speed: "~10 Мбит/с",
+                    plan_color: "color-red",
+                    button_color: "bg-dodger-blue",
+
+
+                },
+                {
+                    icon: "😎",
+                    tariff: "😎 Персональный",
+                    name: "Персональный",
+                    image: "/assets/images/enterprise.png",
+                    description: "Для документов, развлечений, удалённой учёбы и работы.",
+                    price: 790,
+                    currency: "₽",
+                    period: 12,
+                    currencies: [
+                        {
+                            currency: "€",
+                            price: 8,
+                            period: 12,
+                            plans: [
+                                {
+                                    period: 6,
+                                    price: 10,
+                                    currency: "€"
+                                },
+                                {
+                                    period: 1,
+                                    price: 15,
+                                    currency: "€"
+                                },
+                            ],
+
+                        }
+                    ],
+                    plans: [
+                        {
+                            period: 6,
+                            price: 990,
+                            currency: "₽"
+                        },
+                        {
+                            period: 1,
+                            price: 1490,
+                            currency: "₽"
+                        },
+                    ],
+                    secondary_info: "",
+                    button: "Подключиться",
+                    features: [
+                        "🚀 40 Мбит/с",
+                        "✅ Доступ к сайтам", "✅ Ключ придёт за пару минут",
+                        "✅ Работает, пока активна подписка",
+                        "✅ Можно смотреть видео и качать большие файлы",
+                        "💙 Заботливая поддержка",
+                        "🔥 Максимальная скорость и стабильность",
+                        "💼 Выделенный IP идеален для удалённой работы"
+                    ],
+                    speed: "~40 Мбит/с",
+                    plan_color: "color-purple",
+                    button_color: "",
+
+
+                },
+            ];
+
+            const preparePrice = (price, currency) => {
+                // let currency_position = localStorage.getItem('current_currency_position');
+                // if (!currency_position) {
+                //     currency_position = "right";
+                // }
+
+                let currency_position = "left"
+                if (currency == "₽") {
+                    currency_position = "right"
+                }
+
+
+                if (typeof price == "string") {
+                    return price
+                }
+
+                return `${currency_position === "right" ? `${price}${currency}` : `${currency}${price}`}`
+            };
+            const arrayToHtml = (array) => {
+                let html = "";
+                array.forEach(item => html += item);
+                return html;
+
+            }
+            const plural = (value, words) => {
+                value = Math.abs(value) % 100;
+                const num = value % 10;
+                if (value > 10 && value < 20) return words[2];
+                if (num > 1 && num < 5) return words[1];
+                if (num == 1) return words[0];
+                return words[2];
+
+            };
+            const product = (product) => {
+
+
+                return `
+     <div class="col-md-6 col-lg-3 col-sm-12 mb-3">
+        <div class="card">
+            <div class="card-header">
+                                           <span class="card-header-icon">${product.icon}</span>
+
+                <h4 class="plan-name ${product.plan_color}">
+                    ${product.name}
+                </h4>
+                <div class="header-secondary">
+                    <p>${product.description}</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div style="min-height: auto;" class="vertical-margin flex-grow-price-block">
+                    <div class="price-wrap">
+                        <div class="card-price">
+                            <h4>${preparePrice(product.price, product.currency)} ${typeof product.price == "string" ? '' : 'в месяц'}  </h4>
+                            ${typeof product.price != "string" ? `<p class="card-price-description" >При оплате за год</p>` : `<p>${product.secondary_info}</p>`}
+
+                            ${arrayToHtml(product.plans.map(plan => `<p class="card-price-description"><b>${preparePrice(plan.price, plan.currency)}</b> при оплате за ${plan.period} ${plural(plan.period, ["месяц", "месяца", "месяцев"])}</p>`))}
+                        </div>
+                    </div>
+                </div>
+                <div class="vertical-margin">
+                    <div class="card-action">
+                        <button class="btn card-btn-buy ${product.button_color}">${product.button}</button>
+                    </div>
+                </div>
+                <div class="vertical-margin">
+                    <ul class="features-list">
+                    ${arrayToHtml(product.features.map(feature => `<li>${feature}</li>`))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>`
+            };
+            const makeButtonsScroll = () => {
+                const buttonsCard = document.querySelectorAll('.card-btn-buy')
+                if (buttonsCard) {
+                    buttonsCard.forEach(button => {
+                        button.addEventListener('click', event => {
+                            document.querySelector('#block-0ce947a4080e4ac39624c276f7580991').scrollIntoView({behavior: "smooth"})
+                        })
+                    })
+                }
+            }
+
+            const renderProducts = (products) => {
+                const cardRow = document.querySelector('.cards');
+                if (cardRow) {
+                    while (cardRow.firstChild) {
+                        cardRow.removeChild(cardRow.lastChild);
+                    }
+
+                    products.forEach(productItem => cardRow.insertAdjacentHTML('beforeend', product(productItem)));
+                }
+                makeButtonsScroll()
+
+            }
+
+
+            const prepareItems = (items, currency) => {
+
+                return items.map(item => {
+                    const dataForReplace = item.currencies.filter(currencyItem => currencyItem.currency === currency)[0];
+                    if (dataForReplace) {
+                        item = {
+                            ...item, ...dataForReplace, currencies: {
+                                currency: item.currency,
+                                price: item.price,
+                                period: 12,
+                                plans: item.plans,
+                            }
+                        }
+                    }
+                    return item
+
+
+                })
+            }
+
+            let productsPrepared = prepareItems(items, defaultCurrency);
+
+            renderProducts(productsPrepared);
+
+            document.querySelector('.custom-switch-box').addEventListener('click', (eventSelectItem) => {
+                const target = eventSelectItem.target.closest('.radio-currency')
+                const targetInput = target.querySelector('input')
+                const parent = eventSelectItem.target.closest('.custom-switch-box')
+                if (target) {
+                    parent.querySelectorAll('li input').forEach(element => element.checked = false)
+                    target.querySelector('input').checked = true;
+                    const products = prepareItems(items, targetInput.dataset.value)
+
+                    localStorage.setItem('defaultCurrency', targetInput.dataset.value)
+
+                    renderProducts(products)
+
+                }
+            })
+        }
+
+        const interval = setInterval(() => {
+            let replace = document.querySelector('.notion-table__wrapper')
+            if (replace) {
+                appendBlock(replace);
+                clearInterval(interval);
+            }
+        }, 1000);
+
+    })
+
+
+</script>
+
+
+
+<script>
+ // FORM BLOCK START
+    window.addEventListener('load', () => {
+        const test = (window.location.hash.includes("debug") || window.location.search.includes("debug"));
+        const content = `<div id="form-block" class="form-container mx-auto px-4">
+        <h1 class="mb-4">Закажите ключ</h1>
+        <form class="form-data-person">
+            <div class="form-group">
+                <label for="InputEmail">Email <span class="required-dot">*</span></label>
+                <input type="email" class="form-control" id="InputEmail">
+                <small id="emailHelp" class="form-text text-muted">На него придёт файл-ключ</small>
+            </div>
+            <div class="form-subscription">
+
+
+            </div>
+            <div class=" w-full  w-full px-2"></div>
+            <div class="form-agreement">
+                <div id="agrrement_box">
+                <div  class="form-agreement_item">
+                    <input id="agree" name="agree" type="checkbox"
+                           class="custom-checkbox_input"><label
+                        for="agree" class="custom-checkbox_label">
+                    Соглашаюсь с условиями ☝️ <span class="required-dot">*</span></label>
+                </div>
+</div>
+            </div>
+
+<!--            <div class="form-group mb-3">-->
+<!--                <label for="about">Как вы узнали о проекте?</label>-->
+<!--                <input type="text" class="form-control" id="about">-->
+<!--            </div>-->
+
+<div class=" border-b my-4"></div>
+            <div class="form-politic mb-3 "><p>🔒 Отправляя
+                заявку, вы принимаете <a href="https://vpn-naoborot.online/docs/privacy-policy"
+                                         rel="nofollow noreferrer noopener" target="_blank">политику
+                    конфиденциальности</a>, <a href="https://vpn-naoborot.online/docs/oferta"
+                                               rel="nofollow noreferrer noopener"
+                                               target="_blank"><span>оферту</span></a> и <a
+                        href="https://vpn-naoborot.online/docs/terms-of-service" rel="nofollow noreferrer noopener"
+                        target="_blank">условия обслуживания</a>.</p></div>
+
+
+            <div class="d-flex align-items-center justify-content-center w-full">
+                <button type="submit" class="btn btn-primary"> Отправить заявку</button>
+            </div>
+
+        </form>
+    </div>`;
+        const appendBlock = (replace) => {
+            if (test && replace) {
+                replace.firstElementChild.innerHTML = content;
+                let plans = [
+                    {
+                        icon: "🤝",
+                        name: "Бесплатный",
+                        price: "Бесплатно",
+                        currency: "₽",
+                        period: 12,
+                        currencies: [
+                            {
+                                currency: "€",
+                                price: "Бесплатно",
+                                plans: []
+                            },
+                        ],
+                        plans: [],
+                        tariff: "🤝  Бесплатный",
+                        selected: false,
+
+                    },
+                    {
+                        name: "Для документов",
+                        tariff: "📂  Для документов",
+                        icon: "📂",
+                        price: 150,
+                        currency: "₽",
+                        period: 12,
+                        currencies: [
+                            {
+                                currency: "€",
+                                price: 1.5,
+                                period: 12,
+                                plans: [
+                                    {
+                                        period: 6,
+                                        price: 2 ,
+                                        currency: "€"
+                                    },
+                                    {
+                                        period: 1,
+                                        price: 3,
+                                        currency: "€"
+                                    },
+                                ],
+
+                            }
+                        ],
+                        plans: [
+                            {
+                                period: 6,
+                                price: 190,
+                                currency: "₽"
+                            },
+                            {
+                                period: 1,
+                                price: 290,
+                                currency: "₽"
+                            },
+                        ],
+                        selected: true,
+
+
+                    },
+                    {
+                        icon: "📺",
+                        name: "Для видео",
+                        tariff: "📺  Для видео",
+                        price: 290,
+                        currency: "₽",
+                        period: 12,
+                        currencies: [
+                            {
+                                currency: "€",
+                                price: 3,
+                                period: 12,
+                                plans: [
+                                    {
+                                        period: 6,
+                                        price: 4.5,
+                                        currency: "€"
+                                    },
+                                    {
+                                        period: 1,
+                                        price: 6,
+                                        currency: "€"
+                                    },
+                                ],
+
+                            }
+                        ],
+                        plans: [
+                            {
+                                period: 6,
+                                price: 450,
+                                currency: "₽"
+                            },
+                            {
+                                period: 1,
+                                price: 590,
+                                currency: "₽"
+                            },
+                        ],
+                        selected: false,
+
+
+                    },
+                    {
+                        icon: "😎",
+                        tariff: "😎 Персональный",
+                        name: "Персональный",
+                        price: 790,
+                        currency: "₽",
+                        period: 12,
+                        currencies: [
+                            {
+                                currency: "€",
+                                price: 8,
+                                period: 12,
+                                plans: [
+                                    {
+                                        period: 6,
+                                        price: 10,
+                                        currency: "€"
+                                    },
+                                    {
+                                        period: 1,
+                                        price: 15,
+                                        currency: "€"
+                                    },
+                                ],
+
+                            }
+                        ],
+                        plans: [
+                            {
+                                period: 6,
+                                price: 990,
+                                currency: "₽"
+                            },
+                            {
+                                period: 1,
+                                price: 1490,
+                                currency: "₽"
+                            },
+                        ],
+                        selected: false,
+
+                    },
+                ];
+                window.addEventListener('click', (event) => {
+                    const lists = document.querySelectorAll('.custom-selection-list')
+                    const target = event.target
+                    lists.forEach(item => {
+                        if (item !== target && item.classList.contains('active') && target.nodeName !== "BUTTON") {
+                            item.classList.remove('active')
+                            console.log(2)
+                        }
+                    })
+
+                })
+                const prepareItemsCurrency = (items, currency) => {
+
+                    return items.map(item => {
+                        const dataForReplace = item.currencies.filter(currencyItem => currencyItem.currency === currency)[0];
+                        if (dataForReplace) {
+                            item = {
+                                ...item, ...dataForReplace, currencies: [{
+                                    currency: item.currency,
+                                    price: item.price,
+                                    period: item.period,
+                                    plans: item.plans,
+                                }]
+                            }
+                        }
+                        return item
+
+
+                    })
+                }
+                const addEventsToSelections = () => {
+                    const selections = document.querySelectorAll('.custom-selection');
+                    selections.forEach(item => {
+                        // Конкретный элемент из списка
+                        item.querySelector('.custom-selection-list').addEventListener('click', (event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            const target = event.target.closest('li')
+                            const parent = target.closest('.custom-selection-list');
+                            const primaryParent = target.closest('.custom-selection');
+                            const button = primaryParent.querySelector('button');
+                            const prev = parent.querySelectorAll('.select-option');
+                            prev.forEach(item => item.classList.remove('active'))
+                            target.classList.add('active')
+                            parent.classList.remove('active')
+                            button.dataset.name = target.dataset.name
+                            button.dataset.value = target.dataset.value
+                            button.textContent = target.dataset.name;
+
+
+                            switch (primaryParent.dataset.type) {
+                                case "tariff_type":
+                                    plans = plans.map(pl => {
+                                        pl.selected = false;
+                                        console.log(pl.tariff === target.dataset.value, pl.tariff, target.dataset.value)
+                                        if (pl.tariff === target.dataset.value) {
+                                            pl.selected = true;
+                                        }
+                                        return pl
+                                    })
+                                    break;
+                                case "payment_type":
+                                    plans = prepareItemsCurrency(plans, target.dataset.value)
+                                    console.log(plans)
+                                    break;
+                                case "sub_type":
+                                    plans = plans.map(pl => {
+                                        if (pl.period !== target.dataset.value) {
+                                            pl.plans = pl.plans.map(currentPlan => {
+                                                if (currentPlan.period === parseInt(target.dataset.value)) {
+                                                    const originalPlan = {
+                                                        period: pl.period,
+                                                        price: pl.price,
+                                                        currency: pl.currency
+                                                    }
+                                                    pl.period = currentPlan.period;
+                                                    pl.price = currentPlan.price;
+                                                    pl.currency = currentPlan.currency;
+                                                    currentPlan.period = originalPlan.period;
+                                                    currentPlan.price = originalPlan.price;
+                                                    currentPlan.currency = originalPlan.currency;
+
+
+                                                }
+
+
+                                                return currentPlan;
+                                            })
+                                            pl.currencies.map(currency => {
+                                                currency.plans = currency.plans.map(currencyPlanDeep => {
+                                                    if (currencyPlanDeep.period === parseInt(target.dataset.value)) {
+                                                        const originalPlan = {
+                                                            period: currency.period,
+                                                            price: currency.price,
+                                                            currency: currency.currency
+                                                        }
+                                                        currency.period = currencyPlanDeep.period;
+                                                        currency.price = currencyPlanDeep.price;
+                                                        currency.currency = currencyPlanDeep.currency;
+                                                        currencyPlanDeep.period = originalPlan.period;
+                                                        currencyPlanDeep.price = originalPlan.price;
+                                                        currencyPlanDeep.currency = originalPlan.currency;
+
+
+                                                    }
+
+
+                                                    return currencyPlanDeep;
+                                                })
+
+                                                return currency;
+                                            })
+                                        }
+                                        return pl
+                                    })
+
+                                    break
+
+                            }
+                            console.log(plans[1].currencies[0], plans[1].period, target.dataset.value)
+                            renderSelections(plans)
+
+                        })
+
+                        const button = item.querySelector('button');
+                        button.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            button.focus();
+                            const list = event.target.nextElementSibling;
+                            const selections = document.querySelectorAll('.custom-selection .custom-selection-list');
+                            selections.forEach(elem => elem.classList.remove('active'))
+                            list.classList.toggle('active')
+
+
+                        })
+                    });
+                }
+                const plural = (value, words) => {
+                    value = Math.abs(value) % 100;
+                    const num = value % 10;
+                    if (value > 10 && value < 20) return words[2];
+                    if (num > 1 && num < 5) return words[1];
+                    if (num == 1) return words[0];
+                    return words[2];
+
+                };
+                const arrayToHtml = (array) => {
+                    let html = "";
+                    array.forEach(item => html += item);
+                    return html;
+
+                }
+                const selectTemplate = (subscription, select) => {
+                    const options = select.options();
+                    const html = select.html();
+
+                    return `<div class="form-group">
+                    <label>${subscription.name} <span class="required-dot">*</span></label>
+                    <div data-type="${subscription.type}" class="custom-selection ${subscription?.active ? 'active' : ''}">
+                        <button class="custom-selection-name" data-name="${select.selected_name}"
+                                data-value="${select.value}">${select.selected_name}
+                        </button>
+                        <ul class="custom-selection-list">
+                        ${arrayToHtml(options.map(item => `<li class="select-option${select.selected_name === item.name ? ' active' : ''}" data-name="${item.name}" data-value="${item.value}">${item.name}</li>`))}
+                        </ul>
+                        ${select.description}
+                    </div>
+
+                </div>
+                <div class="${html.length > 0 ? 'form-group-after w-100' : ''}">${html}</div>
+`
+                }
+                const selectionsData = (plans) => {
+                    const activePlan = plans.filter(item => item.selected === true)[0]
+                    return [
+                        {
+                            name: "ТАРИФ",
+                            type: "tariff_type",
+                            value: {
+                                selected_name: activePlan.tariff,
+                                value: activePlan.currency,
+                                description: "",
+                                options: () => {
+                                    return plans.map(item => {
+                                        return {
+                                            name: item.tariff,
+                                            value: item.tariff
+                                        }
+                                    })
+                                },
+                                html: () => {
+                                    if (activePlan.name === "Бесплатный") {
+                                        return `<p>На бесплатном тарифе нужно указать ссылку на ваш <strong>открытый</strong> аккаунт в любой соцсети, где видны <strong>имя и фамилия</strong>. Так мы защищаемся от мошенников. На платных тарифах эти данные не нужны.</p>
+                    <div>
+                    <label for="name" class="mt-3">ИМЯ И ФАМИЛИЯ<span class="required-dot">*</span></label>
+                    <input type="text" class="form-control" id="name">
+                    </div>
+                                  <div class="mt-3">
+                    <label for="social"> Ссылка на аккаунт в соцсети <span class="required-dot">*</span></label>
+                    <input type="text" class="form-control" placeholder="https://" id="social" >
+                    <small class="form-text text-muted">LinkedIn, Facebook, Vk, Instagram</small>
+                    </div>
+`;
+                                    }
+                                    return "";
+                                }
+                            },
+                        },
+                        {
+                            name: "СПОСОБ ОПЛАТЫ",
+                            type: "payment_type",
+                            value: {
+                                selected_name: activePlan.currency === "€" ? "Зарубежной картой" : "Российской картой",
+                                value: activePlan.currency,
+                                description: ``,
+                                options: () => {
+                                    return [
+                                        {
+                                            name: "Зарубежной картой",
+                                            value: "€"
+                                        },
+                                        {
+                                            name: "Российской картой",
+                                            value: "₽"
+                                        }
+                                    ];
+                                },
+                                html: function () {
+
+
+                                    return this.value === "₽" ? `<p class="m-0">Лучше платить с <strong>зарубежной карты</strong>:</p><ul><li>💰 Так дешевле </li><li>📱 Можно использовать ApplePay и GooglePay</li><li>💙 Это <strong>намного</strong> удобнее для нас </li></ul>` : '';
+                                }
+                            }
+
+                        },
+                        {
+                            name: "ПЕРИОД ПОДПИСКИ",
+                            type: "sub_type",
+                            value: {
+                                description: `<small>Как часто списывать деньги</small>`,
+                                selected_name: activePlan.period === 12 ? "1 Год" : activePlan.period + ' ' + plural(activePlan.period, ['Месяц', 'Месяца', 'Месяцев']),
+                                value: activePlan.period,
+                                options: () => {
+                                    const tariff = [{
+                                        period: activePlan.period,
+                                        price: activePlan.price,
+                                        currency: activePlan.currency
+                                    }].concat(activePlan.plans).sort((a, b) => a.period > b.period ? -1 : b.period > a.period ? 1 : 0)
+
+                                    return tariff.map(tar => {
+                                        return {
+                                            name: tar.period === 12 ? 1 + ' ' + plural(tar.period, ['Год', 'Года', 'Год']) : tar.period + ' ' + plural(tar.period, ['Месяц', 'Месяца', 'Месяцев']),
+                                            value: tar.period,
+                                            period: tar.period,
+                                            price: tar.price,
+                                            currency: tar.currency
+                                        }
+                                    })
+                                },
+                                html: function () {
+                                    const options = this.options();
+                                    const option = options.filter(e => e.name === this.selected_name)[0];
+                                    const one_month = options.filter(e => e.period === 1)[0];
+
+
+                                    if (!one_month) {
+                                        return "";
+                                    }
+                                    const plural_word = option.period === 12 ? "в год" : (option.period === 1 ? "в месяц" : "за " + option.period + " " + plural(option.period, ["месяц", "месяца", "месяцев"]));
+
+
+                                    if (option.currency === '₽') {
+                                        const phrase = ` (cкидка ${(one_month.price *option.period) - (option.price * option.period)} ${option.currency})`;
+                                        return `<p>  ${option.period > 1 ? `<span class="line-through">${one_month.price *option.period }${option.currency} </span>` : ''}
+                    ${option.price * option.period}${option.currency}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
+                                    }
+                                    const phrase = ` (cкидка ${option.currency}${(one_month.price *option.period) - (option.price * option.period)} )`;
+                                    return `<p>  ${option.period > 1 ? `<span class="line-through">${option.currency}${one_month.price *option.period } </span>` : ''}
+                    ${option.currency}${option.price * option.period}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
+
+                                }
+                            }
+
+
+                        }
+                    ]
+                };
+                const renderSelections = (plans) => {
+
+
+                    const cardRow = document.querySelector('.form-subscription')
+
+                    if (cardRow) {
+                        while (cardRow.firstChild) {
+                            cardRow.removeChild(cardRow.lastChild);
+                        }
+                    }
+                    const data = selectionsData(plans);
+
+                    const activePlan = plans.filter(item => item.selected === true)[0]
+                    const agreement_box = document.querySelector('#agrrement_box');
+
+                    const inputAgree = `
+                         <div  class="form-agreement_item">
+                    <input id="agree" name="agree" type="checkbox"
+                           class="custom-checkbox_input"><label
+                        for="agree" class="custom-checkbox_label">
+                    Соглашаюсь с условиями ☝️ <span class="required-dot">*</span></label>
+                </div>
+                  `;
+
+                    data.forEach((sub, index) => {
+                        if (activePlan.name === "Бесплатный") {
+                            if (sub.type === "tariff_type") {
+                                while (agreement_box.firstChild) {
+                                    agreement_box.removeChild(agreement_box.lastChild);
+                                }
+                                cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value))
+                            }
+                        } else {
+                            cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value))
+
+                        }
+                    });
+
+                    if (activePlan.name !== "Бесплатный" && !agreement_box.firstChild) {
+                        agreement_box.insertAdjacentHTML('beforeend', inputAgree)
+                    }
+                    addEventsToSelections();
+                }
+                renderSelections(plans);
+
+            }
+
+        }
+        const interval = setInterval(() => {
+            let replace = document.querySelector('#block-0ce947a4080e4ac39624c276f7580991')
+
+            if (replace) {
+                appendBlock(replace);
+                clearInterval(interval);
+            }
+        }, 1000);
+
+
+    });
+// END FORM
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/VPN-Naoborot/vpnn-landing@main/dist/assets/css/libs.css">
+    
+
+
+
+
+
+  
