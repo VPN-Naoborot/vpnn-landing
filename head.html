@@ -620,7 +620,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
           }
           sendAnalyticsEvent(gevent);
 
-          if (eventData["status"] == "success") {
+          if (eventData["status"] == "success" && eventData["tarif"] != "🤝 Бесплатный") {
                processPayment(eventData["paymentMethod"], eventData["email"], eventData["tarif"], eventData["billing_cycle"]?eventData["billing_cycle"]:undefined)
           }
     } catch (error) {
@@ -1598,18 +1598,6 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 existingHintEmail.remove();
             }
 
-            const checkbox = document.getElementById('agree');
-            const existingHintAgree = document.querySelector('.hint-message-checkAgree');
-            console.log("Checkbox checked status:", checkbox.checked);
-            
-            if (!checkbox.checked) {
-                addHint('checkAgree', 'Пожалуйста, согласитесь с условиями перед отправкой формы!');
-                document.getElementById('checkAgree').classList.add('invalid-agree');
-                return;
-            } else if (existingHintAgree) {
-                existingHintAgree.remove();
-            }
-
             let formData = {
                 submission:{
                     "Тариф": planName,
@@ -1639,6 +1627,22 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     return;
                 }
                 formData.captcha = captchaToken;
+            } else {
+                const checkbox = document.getElementById('agree');
+                if (!checkbox) {
+                    console.error("Error: No checkbox in not free plan");
+                }
+
+                const existingHintAgree = document.querySelector('.hint-message-checkAgree');
+                console.log("Checkbox checked status:", checkbox.checked);
+                
+                if (!checkbox.checked) {
+                    addHint('checkAgree', 'Пожалуйста, согласитесь с условиями перед отправкой формы!');
+                    document.getElementById('checkAgree').classList.add('invalid-agree');
+                    return;
+                } else if (existingHintAgree) {
+                    existingHintAgree.remove();
+                }
             }
 
             console.log('formData:', formData);
