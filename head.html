@@ -29,6 +29,13 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/91314673" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv"></script>
+<script type="text/javascript">
+    var onloadCallback = function() {
+       alert("grecaptcha is ready!");
+    };
+</script>
 <script>
 
 function embed_reviews() {
@@ -821,8 +828,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 },
                 {
                     icon: "📺",
-                    name: "Для видео",
-                    tariff: "📺  Для видео",
+                    name: "Для Видео",
+                    tariff: "📺 Для Видео",
                     image: "/assets/images/team.png",
                     description: "Для документов, развлечений и удалённой учёбы.",
                     price: 290,
@@ -876,8 +883,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 },
                 {
                     icon: "😎",
-                    tariff: "😎 Персональный",
-                    name: "Персональный",
+                    tariff: "😎 Личный сервер",
+                    name: "Личный сервер",
                     image: "/assets/images/enterprise.png",
                     description: "Для документов, развлечений, удалённой учёбы и работы.",
                     price: 790,
@@ -1090,58 +1097,63 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
 
 <script>
- // FORM BLOCK START
+    // <h1 class="mb-4" style="main-title">Закажите ключ</h1>
     window.addEventListener('load', () => {
-        const test = (window.location.hash.includes("debug") || window.location.search.includes("debug"));
+        // const test = (window.location.hash.includes("debug") || window.location.search.includes("debug"));
+        const formEnabled = (window.location.hash.includes("newform") || window.location.search.includes("newform"));
         const content = `<div id="form-block" class="form-container mx-auto px-4">
-        <h1 class="mb-4">Закажите ключ</h1>
+        
         <form class="form-data-person">
             <div class="form-group">
                 <label for="InputEmail">Email <span class="required-dot">*</span></label>
                 <input type="email" class="form-control" id="InputEmail">
                 <small id="emailHelp" class="form-text text-muted">На него придёт файл-ключ</small>
             </div>
-            <div class="form-subscription">
-
-
+            <div class="form-subscription" id="form-subscription">
             </div>
             <div class=" w-full  w-full px-2"></div>
             <div class="form-agreement">
                 <div id="agrrement_box">
-                <div  class="form-agreement_item">
-                    <input id="agree" name="agree" type="checkbox"
-                           class="custom-checkbox_input"><label
-                        for="agree" class="custom-checkbox_label">
-                    Соглашаюсь с условиями ☝️ <span class="required-dot">*</span></label>
+                    <div  class="form-agreement_item">
+                        <input id="agree" name="agree" type="checkbox"
+                            class="custom-checkbox_input"><label
+                            for="agree" class="custom-checkbox_label">
+                        Соглашаюсь с условиями ☝️ <span class="required-dot">*</span></label>
+                    </div>
                 </div>
-</div>
             </div>
 
-<!--            <div class="form-group mb-3">-->
-<!--                <label for="about">Как вы узнали о проекте?</label>-->
-<!--                <input type="text" class="form-control" id="about">-->
-<!--            </div>-->
-
-<div class=" border-b my-4"></div>
+            <div class=" border-b my-4" id="border-b my-4"></div>
             <div class="form-politic mb-3 "><p>🔒 Отправляя
                 заявку, вы принимаете <a href="https://vpn-naoborot.online/docs/privacy-policy"
-                                         rel="nofollow noreferrer noopener" target="_blank">политику
+                                            rel="nofollow noreferrer noopener" target="_blank">политику
                     конфиденциальности</a>, <a href="https://vpn-naoborot.online/docs/oferta"
-                                               rel="nofollow noreferrer noopener"
-                                               target="_blank"><span>оферту</span></a> и <a
+                                                rel="nofollow noreferrer noopener"
+                                                target="_blank"><span>оферту</span></a> и <a
                         href="https://vpn-naoborot.online/docs/terms-of-service" rel="nofollow noreferrer noopener"
                         target="_blank">условия обслуживания</a>.</p></div>
 
-
             <div class="d-flex align-items-center justify-content-center w-full">
-                <button type="submit" class="btn btn-primary"> Отправить заявку</button>
+                <button id="submit-button" type="submit" class="btn btn-primary"> Отправить заявку</button>
             </div>
 
         </form>
-    </div>`;
+        </div>`;
+
+
+        let captchaWidgetId;
+        
+        function getCaptchaToken() {
+            if (captchaWidgetId !== undefined) {
+                return grecaptcha.enterprise.getResponse(captchaWidgetId);
+            }
+            return null;
+        }
+
+
         const appendBlock = (replace) => {
-            if (test && replace) {
-                replace.firstElementChild.innerHTML = content;
+            if (formEnabled && replace) {
+
                 let plans = [
                     {
                         icon: "🤝",
@@ -1157,13 +1169,13 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                             },
                         ],
                         plans: [],
-                        tariff: "🤝  Бесплатный",
+                        tariff: "🤝 Бесплатный",
                         selected: false,
 
                     },
                     {
                         name: "Для документов",
-                        tariff: "📂  Для документов",
+                        tariff: "📂 Для документов",
                         icon: "📂",
                         price: 150,
                         currency: "₽",
@@ -1206,8 +1218,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     },
                     {
                         icon: "📺",
-                        name: "Для видео",
-                        tariff: "📺  Для видео",
+                        name: "Для Видео",
+                        tariff: "📺 Для Видео",
                         price: 290,
                         currency: "₽",
                         period: 12,
@@ -1249,8 +1261,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     },
                     {
                         icon: "😎",
-                        tariff: "😎 Персональный",
-                        name: "Персональный",
+                        tariff: "😎 Личный сервер",
+                        name: "Личный сервер",
                         price: 790,
                         currency: "₽",
                         period: 12,
@@ -1290,6 +1302,9 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
                     },
                 ];
+
+                replace.firstElementChild.innerHTML = content;
+                
                 window.addEventListener('click', (event) => {
                     const lists = document.querySelectorAll('.custom-selection-list')
                     const target = event.target
@@ -1372,9 +1387,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                                     currentPlan.price = originalPlan.price;
                                                     currentPlan.currency = originalPlan.currency;
 
-
                                                 }
-
 
                                                 return currentPlan;
                                             })
@@ -1393,9 +1406,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                                         currencyPlanDeep.price = originalPlan.price;
                                                         currencyPlanDeep.currency = originalPlan.currency;
 
-
                                                     }
-
 
                                                     return currencyPlanDeep;
                                                 })
@@ -1422,8 +1433,6 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                             const selections = document.querySelectorAll('.custom-selection .custom-selection-list');
                             selections.forEach(elem => elem.classList.remove('active'))
                             list.classList.toggle('active')
-
-
                         })
                     });
                 }
@@ -1449,18 +1458,16 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     return `<div class="form-group">
                     <label>${subscription.name} <span class="required-dot">*</span></label>
                     <div data-type="${subscription.type}" class="custom-selection ${subscription?.active ? 'active' : ''}">
-                        <button class="custom-selection-name" data-name="${select.selected_name}"
-                                data-value="${select.value}">${select.selected_name}
-                        </button>
+                        <button class="custom-selection-name" id="id-${subscription.type}" data-name="${select.selected_name}"
+                                data-value="${select.value}">${select.selected_name}</button>
                         <ul class="custom-selection-list">
                         ${arrayToHtml(options.map(item => `<li class="select-option${select.selected_name === item.name ? ' active' : ''}" data-name="${item.name}" data-value="${item.value}">${item.name}</li>`))}
                         </ul>
                         ${select.description}
                     </div>
 
-                </div>
-                <div class="${html.length > 0 ? 'form-group-after w-100' : ''}">${html}</div>
-`
+                    </div>
+                    <div class="${html.length > 0 ? 'form-group-after w-100' : ''}">${html}</div>`
                 }
                 const selectionsData = (plans) => {
                     const activePlan = plans.filter(item => item.selected === true)[0]
@@ -1482,18 +1489,33 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                 },
                                 html: () => {
                                     if (activePlan.name === "Бесплатный") {
-                                        return `<p>На бесплатном тарифе нужно указать ссылку на ваш <strong>открытый</strong> аккаунт в любой соцсети, где видны <strong>имя и фамилия</strong>. Так мы защищаемся от мошенников. На платных тарифах эти данные не нужны.</p>
-                    <div>
-                    <label for="name" class="mt-3">ИМЯ И ФАМИЛИЯ<span class="required-dot">*</span></label>
-                    <input type="text" class="form-control" id="name">
-                    </div>
-                                  <div class="mt-3">
-                    <label for="social"> Ссылка на аккаунт в соцсети <span class="required-dot">*</span></label>
-                    <input type="text" class="form-control" placeholder="https://" id="social" >
-                    <small class="form-text text-muted">LinkedIn, Facebook, Vk, Instagram</small>
-                    </div>
-`;
+                                        // let captchaElement = document.getElementById("captcha_box");
+                                        
+                                        // if (!captchaElement) {
+                                        //     // If the element does not exist, create it and add it to the page
+                                        //     captchaElement = document.createElement("div");
+                                        //     captchaElement.id = "captcha_box";
+                                        //     captchaElement.style = ".captcha_box";
+                                            
+                                        //     let formSubscriptionElement = document.getElementById("border-b my-4");
+                                        //     formSubscriptionElement.appendChild(captchaElement);
+                                            
+                                        //     Render reCAPTCHA
+                                        //     captchaWidgetId = grecaptcha.enterprise.render('captcha_box', {
+                                        //         'sitekey' : '6LdVrPQnAAAAAPpU1h_1fNAsjyyVasugTFTpmHkv',
+                                        //         'action': 'SELECTED_FREE_PLAN',
+                                        //     });
+                                        // }
+                                    } else {
+                                        // let captchaElement = document.getElementById("captcha_box");
+                                        
+                                        // if (captchaElement) {
+                                        //     // If the element exists, remove it
+                                        //     captchaElement.parentNode.removeChild(captchaElement);
+                                        // }
                                     }
+
+
                                     return "";
                                 }
                             },
@@ -1519,8 +1541,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                 },
                                 html: function () {
 
-
-                                    return this.value === "₽" ? `<p class="m-0">Лучше платить с <strong>зарубежной карты</strong>:</p><ul><li>💰 Так дешевле </li><li>📱 Можно использовать ApplePay и GooglePay</li><li>💙 Это <strong>намного</strong> удобнее для нас </li></ul>` : '';
+                                    return this.value === "₽" ? `<p class="m-0">Лучше платить с <strong>зарубежной карты</strong>:</p><ul><li>📱 Можно использовать ApplePay и GooglePay</li><li>😇 Часть отправляем на благотворительность</li><li>💙 Это <strong>намного</strong> удобнее для нас </li></ul>` : '';
                                 }
                             }
 
@@ -1562,13 +1583,13 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
 
                                     if (option.currency === '₽') {
-                                        const phrase = ` (cкидка ${(one_month.price *option.period) - (option.price * option.period)} ${option.currency})`;
+                                        const phrase = ` (cкидка ${(one_month.price * option.period) - (option.price * option.period)} ${option.currency})`;
                                         return `<p>  ${option.period > 1 ? `<span class="line-through">${one_month.price *option.period }${option.currency} </span>` : ''}
-                    ${option.price * option.period}${option.currency}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
+                                                        ${option.price * option.period}${option.currency}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
                                     }
-                                    const phrase = ` (cкидка ${option.currency}${(one_month.price *option.period) - (option.price * option.period)} )`;
+                                    const phrase = ` (cкидка ${option.currency}${(one_month.price * option.period) - (option.price * option.period)} )`;
                                     return `<p>  ${option.period > 1 ? `<span class="line-through">${option.currency}${one_month.price *option.period } </span>` : ''}
-                    ${option.currency}${option.price * option.period}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
+                                                     ${option.currency}${option.price * option.period}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
 
                                 }
                             }
@@ -1577,11 +1598,17 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         }
                     ]
                 };
+
+
+    // CREATE TYPE old_vpn.tariff AS ENUM (
+    // '🤝 Бесплатный',
+    // '📂 Для документов',
+    // '📺 Для Видео',
+    // '😎 Личный сервер');
+
                 const renderSelections = (plans) => {
 
-
                     const cardRow = document.querySelector('.form-subscription')
-
                     if (cardRow) {
                         while (cardRow.firstChild) {
                             cardRow.removeChild(cardRow.lastChild);
@@ -1592,14 +1619,12 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     const activePlan = plans.filter(item => item.selected === true)[0]
                     const agreement_box = document.querySelector('#agrrement_box');
 
-                    const inputAgree = `
-                         <div  class="form-agreement_item">
-                    <input id="agree" name="agree" type="checkbox"
-                           class="custom-checkbox_input"><label
-                        for="agree" class="custom-checkbox_label">
-                    Соглашаюсь с условиями ☝️ <span class="required-dot">*</span></label>
-                </div>
-                  `;
+                    const inputAgree = `<div  class="form-agreement_item">
+                                            <input id="agree" name="agree" type="checkbox"
+                                                class="custom-checkbox_input"><label
+                                                for="agree" class="custom-checkbox_label">
+                                            Соглашаюсь с условиями ☝️ <span class="required-dot">*</span></label>
+                                        </div>`;
 
                     data.forEach((sub, index) => {
                         if (activePlan.name === "Бесплатный") {
@@ -1614,29 +1639,193 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
                         }
                     });
-
-                    if (activePlan.name !== "Бесплатный" && !agreement_box.firstChild) {
-                        agreement_box.insertAdjacentHTML('beforeend', inputAgree)
-                    }
                     addEventsToSelections();
                 }
                 renderSelections(plans);
-
             }
 
+            const emailInputElement = document.getElementById('InputEmail');
+            if (emailInputElement) {  // убедимся, что элемент действительно существует
+                emailInputElement.addEventListener('blur', function() {
+                    const email = emailInputElement.value;
+                    const existingHint = document.querySelector('.hint-message');
+                    
+                    if (isValidEmail(email) && existingHint) {
+                        existingHint.remove();
+                        emailInputElement.classList.remove('invalid-input');
+                    }
+                });
+            }
         }
+
+        function isValidEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return emailPattern.test(email);
+        }
+
+        function addHint(elementId, message) {
+            const inputElement = document.getElementById(elementId);
+            const hintElement = document.createElement('div');
+            
+            hintElement.className = 'hint-message';
+            hintElement.style.color = 'red';
+            hintElement.textContent = message;
+
+            // Удаляем предыдущее сообщение-подсказку, если оно существует
+            const existingHint = document.querySelector('.hint-message');
+            if (existingHint) {
+                existingHint.remove();
+            }
+
+            // Добавляем новое сообщение-подсказку после элемента ввода
+            inputElement.insertAdjacentElement('afterend', hintElement);
+        }
+
+        function showLoader() {
+            console.log("Loading...")
+            submitButton = document.getElementById('submit-button');
+            submitButton.innerHTML = "Отправка..."
+            submitButton.disabled = true;
+        }
+
+        function showSuccess() {
+            console.log("Success!")
+            const successContent = `<h1>✅ Отлично!</h1>
+<div>
+<br>
+Мы получили заявку и пришлём ключ на почту.
+<br>
+<br>
+<b>⚠️ Пожалуйста проверяйте папки СПАМ и РАССЫЛКИ</b>
+<br>
+<br>
+Спасибо!
+</div>`
+            document.getElementById('form-block').innerHTML = successContent
+        }
+
+        function showError() {
+            console.log("Error!")
+            const errorContent = `<h1>🚨 Ой-ой!</h1>
+<div>
+<br>
+Произошла какая-то ошибка. Пожалуйста обновите страницу и попробуйте снова.
+<br>
+<br>
+<b>Если проблема сохраняется, напишите нам <a href="mailto:support@vpn-naoborot.online">support@vpn-naoborot.online</a></b>
+<br>
+<br>
+Спасибо!
+</div>`
+            document.getElementById('form-block').innerHTML = errorContent
+        }
+
+        function submitData() {
+
+            const planElement = document.getElementById('id-tariff_type');
+            const paymentMethodElement = document.getElementById('id-payment_type');
+            const periodElement = document.getElementById('id-sub_type');
+            const emailInputElement = document.getElementById('InputEmail');
+
+            const planName = planElement ? planElement.innerText : "";
+            const paymentMethod = paymentMethodElement ? paymentMethodElement.innerText : "Зарубежной картой";
+            const period = periodElement ? periodElement.innerText : "1 Год";
+            const email = emailInputElement.value;
+
+            // Проверка на корректность и наличие email
+            const existingHint = document.querySelector('.hint-message');
+            
+            if (!isValidEmail(email)) {
+                addHint('InputEmail', 'Пожалуйста, введите корректный email');
+                document.getElementById('InputEmail').classList.add('invalid-input');
+                return;
+            } else if (existingHint) {
+                existingHint.remove();
+            }
+
+            let formData = {
+                submission:{
+                    "Тариф": planName,
+                    "Email": email,
+                    "Способ оплаты": paymentMethod,
+                    "Период подписки": period,
+                    "Город, в котором нужен сервер": "Москва",  // TODO: personal tariff brakes without that, need to remove on backend side.
+                    "Соглашаюсь с условиями ☝️": "Yes", 
+                    "Получать обновления и инструкции на Email": "Yes"
+                }
+            };
+
+            // if (planName === "🤝 Бесплатный") {
+            //     const captchaToken = getCaptchaToken();
+
+            //     // Если reCAPTCHA не была выполнена, предотвращаем отправку формы и выводим сообщение пользователю
+            //     if (!captchaToken) {
+            //         alert('Пожалуйста, завершите reCAPTCHA перед отправкой.');
+            //         return;
+            //     }
+            //     formData.captcha = captchaToken;
+            // }
+
+
+            console.log('formData:', formData);
+            
+
+            showLoader();
+
+            function handleResponse(response) {
+                if (response.status !== 200) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                console.log("response.status", response.status)
+                return response.json();
+            }
+
+            function handleData(data) {
+                console.log(data);
+                if (data.code !== 200) {
+                    throw new Error(`HTTP error! Status: ${data.code}`);
+                }
+                console.log("data", data)
+                showSuccess();  // Show success message or action
+            }
+
+            function handleError(error) {
+                console.error("Error:", error);
+                showError();  // Show error message or action
+            }
+
+            fetch('https://api.vpn-naoborot.online/v1/api/create-submission-webhook/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': '*/*'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(handleResponse)
+            .then(handleData)
+            .catch(handleError);
+
+
+
+        }
+
         const interval = setInterval(() => {
-            let replace = document.querySelector('#block-0ce947a4080e4ac39624c276f7580991')
+            let replace = document.querySelector('#block-0ce947a4080e4ac39624c276f7580991');
 
             if (replace) {
                 appendBlock(replace);
                 clearInterval(interval);
+
+                // Добавление обработчика события для кнопки после добавления блока
+                document.querySelector('.btn.btn-primary').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    submitData();
+                });
             }
         }, 1000);
 
-
     });
-// END FORM
 </script>
 
 
