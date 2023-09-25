@@ -983,7 +983,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
     // <h1 class="mb-4" style="main-title">Закажите ключ</h1>
     window.addEventListener('load', () => {
         // const test = (window.location.hash.includes("debug") || window.location.search.includes("debug"));
-        const formEnabled = true;
+        const formEnabled = (window.location.hash.includes("newform") || window.location.search.includes("newform")) || environment == 'test';
+
         const content = `<div id="form-block" class="form-container mx-auto px-4">
         
         <form class="form-data-person">
@@ -1331,8 +1332,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     </div>
 
                 </div>
-                <div class="${html.length > 0 ? 'form-group-after w-100' : ''}">${html}</div>
-`
+                <div class="${html.length > 0 ? 'form-group-after w-100' : ''}">${html}</div>`
                 }
                 const selectionsData = (plans) => {
                     const activePlan = plans.filter(item => item.selected === true)[0]
@@ -1414,7 +1414,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                 },
                                 html: function () {
 
-                                    return this.value === "₽" ? `<p class="m-0">Лучше платить с <strong>зарубежной карты</strong>:</p><ul><li>💰 Так дешевле </li><li>📱 Можно использовать ApplePay и GooglePay</li><li>💙 Это <strong>намного</strong> удобнее для нас </li></ul>` : '';
+                                    return this.value === "₽" ? `<p class="m-0">Лучше платить с <strong>зарубежной карты</strong>:</p><ul><li>📱 Можно использовать ApplePay и GooglePay</li><li>😇 Часть отправляем на благотворительность</li><li>💙 Это <strong>намного</strong> удобнее для нас </li></ul>` : '';
                                 }
                             }
                         },
