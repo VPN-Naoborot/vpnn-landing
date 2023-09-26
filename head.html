@@ -35,17 +35,26 @@
             carouselBlockId: "block-03e781ba4c1647c3ae5897f233a03442",
             buttonBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
             replaceBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
-            address: "https://vpn-naoborot.online/"    
+            address: "https://vpn-naoborot.online/",
+            videoTarifNameIcon: "📺 Для Видео",
+            videoTarifName: "Для Видео",
+            personalTarifNameIcon: "😎 Личный сервер",
+            personalTarifName: "Личный сервер"
         },
         test: {
             carouselBlockId: "block-cb7cecee864a47af815c267ff4a1b333",
             buttonBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
             replaceBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
-            address: "https://test-vpnn.super.site/"
+            address: "https://test-vpnn.super.site/",
+            videoTarifNameIcon: "📺 Для видео",
+            videoTarifName: "Для видео",
+            personalTarifNameIcon: "😎 Персональный",
+            personalTarifName: "Персональный"
         }
     };
 
-    const environment = window.location.hostname.includes("test-vpnn.super.site") ? "test" : "production";
+    const environment = (window.location.hostname.includes("test-vpnn.super.site")) ? "test" : "production";
+    const environmentText = (window.location.hostname.includes("test-vpnn.super.site") || window.location.search.includes("newform")) ? "test" : "production";
     
     console.log('Environment: ', environment)
 </script>
@@ -302,7 +311,8 @@ window.addEventListener("load", (event) => {
                 },
             ],
         },
-        "📺 Для Видео": {
+        // "📺 Для Видео": {
+            [config[environmentText].videoTarifNameIcon]: {
             "description": "VPN Наоборот – Для видео. Ежемесячный платёж.",
             "rub-descriptions": {
               "1-month":  "VPN Наоборот – Для видео.\
@@ -359,7 +369,8 @@ window.addEventListener("load", (event) => {
                 },
             ],
         },
-        "😎 Личный сервер": {
+        // "😎 Личный сервер": {
+            [config[environmentText].personalTarifNameIcon]: {
             "description": "VPN Наоборот – Личный сервер. Ежемесячный платёж.",
             "rub-descriptions": {
               "1-month":  "VPN Наоборот – Личный сервер.\
@@ -443,6 +454,7 @@ window.addEventListener("load", (event) => {
     let encodedEmail = btoa(email);
     let urlSafeEncodedEmail = encodedEmail.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 
+    console.log(tarifs, tarif, tarifs[tarif]);
     url = "https://vpnnonline.com?link=" +  tarifs[tarif]["stripe-urls"][billing_cycle] + "?prefilled_email=" + encodeURIComponent(email) + "&client_reference_id=" + urlSafeEncodedEmail
     console.log("Redirecting to ", url)
     return url
@@ -551,10 +563,12 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
               case '📂 Для документов':
                 gevent = "form_docs"
                 break;
-              case '📺 Для Видео':
+              // case '📺 Для Видео':
+              case [config[environmentText].videoTarifNameIcon]:
                 gevent = "form_video"
                 break;
-              case '😎 Личный сервер':
+              // case '😎 Личный сервер':
+              case [config[environmentText].personalTarifNameIcon]:
                 gevent = "form_server"
                 break;
           }
@@ -607,10 +621,12 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
               case '📂 Для документов':
                 gevent = "send_form_docs"
                 break;
-              case '📺 Для Видео':
+              // case '📺 Для Видео':
+              case [config[environmentText].videoTarifNameIcon]:
                 gevent = "send_form_video"
                 break;
-              case '😎 Личный сервер':
+              // case '😎 Личный сервер':
+              case [config[environmentText].personalTarifNameIcon]:
                 gevent = "send_form_server"
                 break;
           }
@@ -735,8 +751,10 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 },
                 {
                     icon: "📺",
-                    name: "Для Видео",
-                    tariff: "📺 Для Видео",
+                    // name: "Для Видео",
+                    name: [config[environmentText].videoTarifName],
+                    // tariff: "📺 Для Видео",
+                    tariff: [config[environmentText].videoTarifNameIcon],
                     image: "/assets/images/team.png",
                     description: "Для документов, развлечений и удалённой учёбы.",
                     price: 290,
@@ -787,8 +805,10 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 },
                 {
                     icon: "😎",
-                    tariff: "😎 Личный сервер",
-                    name: "Личный сервер",
+                    // tariff: "😎 Личный сервер",
+                    tariff: [config[environmentText].personalTarifNameIcon],
+                    // name: "Личный сервер",
+                    name: [config[environmentText].personalTarifName],
                     image: "/assets/images/enterprise.png",
                     description: "Для документов, развлечений, удалённой учёбы и работы.",
                     price: 790,
@@ -983,7 +1003,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
     window.addEventListener('load', () => {
         // const test = (window.location.hash.includes("debug") || window.location.search.includes("debug"));
         const formEnabled = (window.location.hash.includes("newform") || window.location.search.includes("newform")) || environment == 'test';
-
+        console.log("Form enabled:", formEnabled)
         const content = `<div id="form-block" class="form-container mx-auto px-4">
         
         <form class="form-data-person">
@@ -1096,8 +1116,10 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     },
                     {
                         icon: "📺",
-                        name: "Для видео",
-                        tariff: "📺 Для видео",
+                        // name: "Для видео",
+                        name: config[environmentText].videoTarifName,
+                        // tariff: "📺 Для видео",
+                        tariff: config[environmentText].videoTarifNameIcon,
                         price: 3,
                         currency: "€",
                         period: 12,
@@ -1136,8 +1158,10 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     },
                     {
                         icon: "😎",
-                        tariff: "😎 Персональный",
-                        name: "Персональный",
+                        // tariff: "😎 Персональный",
+                        tariff: config[environmentText].personalTarifNameIcon,
+                        // name: "Персональный",
+                        name: config[environmentText].personalTarifName,
                         price: 8,
                         currency: "€",
                         period: 12,
@@ -1362,7 +1386,6 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                             textCaptchaElement.innerText = "Подтвердите, что Вы не робот";
                                             textCaptchaElement.id = "captcha_text";
                                             textCaptchaElement.class = "captcha_text";
-                                            textCaptchaElement.style = "captcha_text";
                                             
                                             let formSubscriptionElement = document.getElementById("captcha-container");
                                             formSubscriptionElement.appendChild(textCaptchaElement);
@@ -1483,18 +1506,20 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         let html = ""
                         if (sub.type === "payment_type") {
                             html_payment = sub.value.html();
+                            html_payment += html_payment.length > 0 ? "<br>" : "";
                         } else if (sub.type === "sub_type") {
                             html_sub = sub.value.html();
-                            html = html_payment + "<br>" + html_sub;
+                            html = html_payment + html_sub;
                         } else if (sub.type === "tariff_type") {
                             rowWidth = "100%";
+                            html += sub.value.html();
                         }
                         if (activePlan.name === "Бесплатный") {
                             if (sub.type === "tariff_type") {
                                 while (agreement_box.firstChild) {
                                     agreement_box.removeChild(agreement_box.lastChild);
                                 }
-                                cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value, rowWidth, sub.value.html()))
+                                cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value, rowWidth, html))
                             }
                         } else {
                             cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value, rowWidth, html))
