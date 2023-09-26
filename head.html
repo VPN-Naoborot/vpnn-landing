@@ -1471,12 +1471,12 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
                                     if (option.currency === '₽') {
                                         const phrase = ` (cкидка ${(one_month.price * option.period) - (option.price * option.period)} ${option.currency})`;
-                                        return `<p>  ${option.period > 1 ? `<span class="line-through">${one_month.price *option.period }${option.currency} </span>` : ''}
-                                                        ${option.price * option.period}${option.currency}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
+                                        return `<p>  ${option.period > 1 ? `<span class="line-through">${one_month.price *option.period }${option.currency}</span>` : ''}
+                                                        ${option.price * option.period}${option.currency}  ${option.period !== 1 ? plural_word + phrase : plural_word}</p>`
                                     }
-                                    const phrase = ` (cкидка ${option.currency}${(one_month.price * option.period) - (option.price * option.period)} )`;
-                                    return `<p>  ${option.period > 1 ? `<span class="line-through">${option.currency}${one_month.price *option.period } </span>` : ''}
-                                                     ${option.currency}${option.price * option.period}  ${option.period !== 1 ? plural_word + phrase : plural_word} </p>`
+                                    const phrase = ` (cкидка ${option.currency}${(one_month.price * option.period) - (option.price * option.period)})`;
+                                    return `<p>  ${option.period > 1 ? `<span class="line-through">${option.currency}${one_month.price *option.period }</span>` : ''}
+                                                     ${option.currency}${option.price * option.period}  ${option.period !== 1 ? plural_word + phrase : plural_word}</p>`
                                 }
                             }
                         }
@@ -1514,18 +1514,18 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                             rowWidth = "100%";
                             html += sub.value.html();
                         }
+                        while (agreement_box.firstChild) {
+                            agreement_box.removeChild(agreement_box.lastChild);
+                        } 
                         if (activePlan.name === "Бесплатный") {
                             if (sub.type === "tariff_type") {
-                                while (agreement_box.firstChild) {
-                                    agreement_box.removeChild(agreement_box.lastChild);
-                                }
                                 cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value, rowWidth, html))
                             }
                         } else {
                             cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value, rowWidth, html))
                         }
                     });
-                    if (activePlan.name !== "Бесплатный" && !agreement_box.firstChild) {
+                    if (activePlan.name !== "Бесплатный" && !agreement_box.firstChild && activePlan.currency !== "€") {
                         agreement_box.insertAdjacentHTML('beforeend', inputAgree)
                     }
                     addEventsToSelections();
