@@ -26,41 +26,6 @@
 <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 
 <script>
-    const config = {
-        production: {
-            carouselBlockId: "block-03e781ba4c1647c3ae5897f233a03442",
-            buttonBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
-            replaceBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
-            address: "https://vpn-naoborot.online/",
-            videoTarifNameIcon: "📺 Для Видео",
-            videoTarifName: "Для Видео",
-            personalTarifNameIcon: "😎 Личный сервер",
-            personalTarifName: "Личный сервер"
-        },
-        test: {
-            carouselBlockId: "block-cb7cecee864a47af815c267ff4a1b333",
-            buttonBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
-            replaceBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
-            address: "https://test-vpnn.super.site/",
-            videoTarifNameIcon: "📺 Для Видео",
-            videoTarifName: "Для Видео",
-            personalTarifNameIcon: "😎 Личный сервер",
-            personalTarifName: "Личный сервер"
-        }
-    };
-
-    const environment = (window.location.hostname.includes("test-vpnn.super.site")) ? "test" : "production";
-    const environmentText = (window.location.hostname.includes("test-vpnn.super.site") || window.location.search.includes("newform")) ? "test" : "production";
-    
-    console.log('Environment: ', environment)
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        console.log("Changing emoji");
-        // document.body.innerHTML = twemoji.parse(document.body.innerHTML);
-    });
-</script>
-<script>
 function embed_reviews() {
   
     console.log('Embedding reviews')
@@ -877,6 +842,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 return words[2];
 
             };
+            
+
             const product = (product) => {
                 return `
      <div class="col-md-6 col-lg-3 col-sm-12 mb-3">
@@ -904,7 +871,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 </div>
                 <div class="vertical-margin">
                     <div class="card-action">
-                        <button class="btn card-btn-buy ${product.button_color}">${product.button}</button>
+                        <button class="btn card-btn-buy ${product.button_color}" onclick="handleButtonClick('${product.currency}', '${product.name}');">${product.button}</button>
                     </div>
                 </div>
                 <div class="vertical-margin">
@@ -1644,9 +1611,12 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             if (planName === "🤝 Бесплатный") {
                 const captchaToken = getCaptchaToken();
                 if (!captchaToken) {
-                    alert('Пожалуйста, завершите reCAPTCHA перед отправкой.');
+                    console.log("changing color");
+                    document.querySelector('#captcha_box > div > div > iframe').classList.add("captcha_error");
+                    // alert('Пожалуйста, завершите reCAPTCHA перед отправкой.');
                     return;
                 }
+                document.querySelector('#captcha_box > div > div > iframe').classList.remove("captcha_error");
                 formData.captcha = captchaToken;
             } else if (paymentMethod === "Российской картой") {
                 const checkbox = document.getElementById('agree');
