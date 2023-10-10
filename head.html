@@ -956,6 +956,25 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 </script>
 
 <script>
+
+    function embedDocuments(language) {
+
+        let paragraph = document.querySelector("#documents-container");
+        paragraph.innerHTML = agreementDocuments[language];
+    }
+
+    function processListItemClick(itemName) {
+        console.log("clicked ", itemName);
+        switch (itemName) {
+            case "Зарубежной картой": 
+                embedDocuments("english");
+                break;
+            case "Российской картой":
+                embedDocuments("russian");
+                break;
+        }
+    }
+
     window.addEventListener('load', () => {
         const formEnabled = (window.location.hash.includes("newform") || window.location.search.includes("newform")) || environment == 'test';
         console.log("Form enabled:", formEnabled)
@@ -982,16 +1001,15 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             </div>
 
             <div class="captcha-container" id="captcha-container"></div>
-            <div class="border-b my-4" id="border-b my-4"></div>
-            
-            <div class="form-politic mb-3 "><p>🔒 Отправляя
-                заявку, вы принимаете <a href="https://vpn-naoborot.online/docs/privacy-policy"
-                                            rel="nofollow noreferrer noopener" target="_blank">политику
-                    конфиденциальности</a>, <a href="https://vpn-naoborot.online/docs/oferta"
-                                                rel="nofollow noreferrer noopener"
-                                                target="_blank"><span>оферту</span></a> и <a
-                        href="https://vpn-naoborot.online/docs/terms-of-service" rel="nofollow noreferrer noopener"
-                        target="_blank">условия обслуживания</a>.</p></div>
+            <div class=" border-b my-4" id="border-b my-4"></div>
+            <div class="form-politic mb-3" id="documents-container">
+                <p>🔒 Отправляя
+                заявку, вы принимаете <a href="https://vpnnonline.com/privacy-policy"
+                                                rel="nofollow noreferrer noopener" target="_blank">политику
+                        конфиденциальности</a> и <a
+                            href="https://vpnnonline.com/terms-of-service" rel="nofollow noreferrer noopener"
+                            target="_blank">условия обслуживания</a>.</p>
+            </div>
 
             <div class="d-flex align-items-center justify-content-center w-full">
                 <button id="submit-button" type="submit" class="btn btn-primary"> Отправить заявку</button>
@@ -1211,6 +1229,16 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                     break;
                                 case "payment_type":
                                     plans = prepareItemsCurrency(plans, target.dataset.value)
+                                    // button.onclick = function() {
+                                    //     let paragraph = document.querySelector("#form-block > form > div.form-politic.mb-3");
+                                    //     console.log("IN ON CLICK ", paragraph)
+                                    //     if (this.dataset.name === "Зарубежной картой") {
+                                    //         paragraph.innerText = agreementDocuments["english"];
+                                    //     } else if (this.dataset.name === "Российской картой") {
+                                    //         paragraph.innerText = agreementDocuments["russian"];
+                                    //     }
+                                    // };
+
                                     console.log(plans)
                                     break;
                                 case "sub_type":
@@ -1260,6 +1288,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                     break
                             }
                             console.log(plans[1].currencies[0], plans[1].period, target.dataset.value)
+                            const paymentTypeElement = document.getElementById('id-payment_type');
+                            
                             renderSelections(plans)
                         })
 
@@ -1297,7 +1327,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                     <button class="custom-selection-name" id="id-${subscription.type}" data-name="${select.selected_name}"
                                         data-value="${select.value}">${select.selected_name}</button>
                                     <ul class="custom-selection-list">
-                                        ${arrayToHtml(options.map(item => `<li class="select-option${select.selected_name === item.name ? ' active' : ''}" data-name="${item.name}" data-value="${item.value}">${item.name}</li>`))}
+                                        ${arrayToHtml(options.map(item => `<li class="select-option${select.selected_name === item.name ? ' active' : ''}" data-name="${item.name}" onClick="processListItemClick('${item.name}')" data-value="${item.value}">${item.name}</li>`))}
                                     </ul>
                                     ${select.description}
                                 </div>
@@ -1442,11 +1472,13 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     const data = selectionsData(plans);
                     const activePlan = plans.filter(item => item.selected === true)[0]
                     const agreement_box = document.querySelector('#agrrement_box');
+                    const paymentTypeElement = document.getElementById('id-payment_type');
+
                     const inputAgree = `<div  class="form-agreement_item" id="checkAgree">
                                             <input id="agree" name="agree" type="checkbox"
                                                 class="custom-checkbox_input"><label
                                                 for="agree" class="custom-checkbox_label">
-                                            Соглашаюсь с условиями ☝️ <span class="required-dot">*</span></label>
+                                            Соглашаюсь с условиями 👇 <span class="required-dot">*</span></label>
                                         </div>`;
                     let html_payment = "";
                     let html_sub = "";
@@ -1474,14 +1506,13 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                             cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value, rowWidth, html))
                         }
                     });
-                    if (activePlan.name !== "Бесплатный" && !agreement_box.firstChild && activePlan.currency !== "€") {
+                    if (activePlan.name !== "Бесплатный" && !agreement_box.firstChild) {
                         agreement_box.insertAdjacentHTML('beforeend', inputAgree)
                         const checkboxDiv = document.getElementById('checkAgree');
                         const checkbox = document.getElementById('agree');
                         if (checkbox) {
                             checkbox.addEventListener('change', function() {
                                 const existingHintAgree = document.querySelector('.hint-message-checkAgree');
-                                console.log(existingHintAgree)
                                 if (checkbox.checked && existingHintAgree) {
                                     existingHintAgree.remove();
                                     checkboxDiv.classList.remove('invalid-agree');
@@ -1491,6 +1522,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     }
                     addEventsToSelections();
                 }
+                const paymentTypeElement = document.getElementById('id-payment_type'); 
+                
                 renderSelections(plans);
             }
 
@@ -1502,7 +1535,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     
                     if (isValidEmail(email) && existingHint) {
                         existingHint.remove();
-                        emailInputElement.classList.remove('invalid-input');
+                        // emailInputElement.classList.remove('#invalid-input');
+                        emailInputElement.style.border = "1px solid #cbd5e1"
                     }
                 });
             }
@@ -1579,10 +1613,13 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             const existingHintEmail = document.querySelector('.hint-message-InputEmail');
             if (!isValidEmail(email)) {
                 addHint('InputEmail', 'Пожалуйста, введите корректный email');
-                document.getElementById('InputEmail').classList.add('invalid-input');
+                // emailInputElement.classList.add("invalid-input")
+                emailInputElement.style.border = "1px solid red"
                 allCorrect = false;
             } else if (existingHintEmail) {
                 existingHintEmail.remove();
+                // emailInputElement.classList.remove("invalid-input")
+                emailInputElement.style.border = "1px solid #cbd5e1"
             }
 
             let formData = {
@@ -1611,19 +1648,17 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             if (planName === "🤝 Бесплатный") {
                 const captchaToken = getCaptchaToken();
                 if (!captchaToken) {
-                    console.log("changing color");
                     document.querySelector('#captcha_box > div > div > iframe').classList.add("captcha_error");
                     // alert('Пожалуйста, завершите reCAPTCHA перед отправкой.');
                     return;
                 }
                 document.querySelector('#captcha_box > div > div > iframe').classList.remove("captcha_error");
                 formData.captcha = captchaToken;
-            } else if (paymentMethod === "Российской картой") {
+            } else {
                 const checkbox = document.getElementById('agree');
                 if (!checkbox) {
                     console.error("Error: No checkbox in not free plan");
                 }
-
                 const existingHintAgree = document.querySelector('.hint-message-checkAgree');
                 console.log("Checkbox checked status:", checkbox.checked);
                 
@@ -1683,6 +1718,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
         }
 
         const interval = setInterval(() => {
+            
             let replace = document.querySelector(config[environment].replaceBlockId);
 
             if (replace) {
