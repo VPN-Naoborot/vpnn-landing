@@ -418,7 +418,6 @@ window.addEventListener("load", (event) => {
     let encodedEmail = btoa(email);
     let urlSafeEncodedEmail = encodedEmail.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 
-    console.log(tarifs, tarif, tarifs[tarif]);
     url = "https://vpnnonline.com?link=" +  tarifs[tarif]["stripe-urls"][billing_cycle] + "?prefilled_email=" + encodeURIComponent(email) + "&client_reference_id=" + urlSafeEncodedEmail
     console.log("Redirecting to ", url)
     return url
@@ -508,7 +507,6 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
   
   function processPayment(paymentMethod, email, tarif, billing_cycle){
     
-    console.log('processPayment', paymentMethod)
     if (paymentMethod == 'Зарубежной картой') {
       URL = getStripePaymentLink(email, tarif, billing_cycle)
       window.open(URL, '_blank');
@@ -964,7 +962,6 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
     }
 
     function processListItemClick(itemName) {
-        console.log("clicked ", itemName);
         switch (itemName) {
             case "Зарубежной картой": 
                 embedDocuments("english");
@@ -1229,16 +1226,6 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                     break;
                                 case "payment_type":
                                     plans = prepareItemsCurrency(plans, target.dataset.value)
-                                    // button.onclick = function() {
-                                    //     let paragraph = document.querySelector("#form-block > form > div.form-politic.mb-3");
-                                    //     console.log("IN ON CLICK ", paragraph)
-                                    //     if (this.dataset.name === "Зарубежной картой") {
-                                    //         paragraph.innerText = agreementDocuments["english"];
-                                    //     } else if (this.dataset.name === "Российской картой") {
-                                    //         paragraph.innerText = agreementDocuments["russian"];
-                                    //     }
-                                    // };
-
                                     console.log(plans)
                                     break;
                                 case "sub_type":
