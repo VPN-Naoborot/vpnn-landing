@@ -1,246 +1,252 @@
 <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HX94WD1PS"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-3HX94WD1PS');
+    gtag('config', 'G-3HX94WD1PS');
 </script>
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(91314673, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true,
-        ecommerce:"dataLayer"
-   });
+    ym(91314673, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "dataLayer"
+    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/91314673" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/91314673" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 
 <script>
-function embed_reviews() {
-  
-    console.log('Embedding reviews')
-    document.getElementById(config[environment].carouselBlockId).innerHTML = '<div id="reviewsio-carousel-widget"></div>';
+    function embed_reviews() {
 
-    new carouselInlineWidget('reviewsio-carousel-widget',{
-        store: 'vpn-naoborot.online',
-        sku: '',
-        lang: 'en',
-        carousel_type: 'topHeader',
-        styles_carousel: 'CarouselWidget--topHeader',
-  
-        options:{
-          general:{
-            review_type: 'company, product',
-            min_reviews: '1',
-            max_reviews: '20',
-            address_format: 'CITY, COUNTRY',
-            enable_auto_scroll: 10000,
-          },
-          header:{
-            enable_overall_stars: true,
-            rating_decimal_places: 2,
-          },
-          reviews: {
-            enable_customer_name: true,
-            enable_customer_location: false,
-            enable_verified_badge: true,
-            enable_recommends_badge: true,
-            enable_photos: true,
-            enable_videos: true,
-            enable_review_date: true,
-            disable_same_customer: true,
-            min_review_percent: 4,
-            third_party_source: true,
-            hide_empty_reviews: true,
-            enable_product_name: true,
-            tags: "",
-            branch: "",
-            enable_branch_name: false,
-          },
-          popups: {
-            enable_review_popups:  true,
-            enable_helpful_buttons: true,
-            enable_helpful_count: true,
-            enable_share_buttons: true,
-          },
-      },
-      translations: {
-        verified_customer:  "Verified Customer",
-      },
-      styles:{
-        '--base-font-size': '16px',
-        '--base-maxwidth':'100%',
-        '--reviewsio-logo-style':'var(--logo-normal)',
-        '--common-star-color':'#3B82F6',
-        '--common-star-disabled-color':' rgba(0,0,0,0.25)',
-        '--medium-star-size':' 22px',
-        '--small-star-size':'19px', /*Modal*/
-        '--x-small-star-size':'16px',
-        '--x-small-star-display':'inline-flex',
-  
-        '--header-order':'1',
-        '--header-width':'160px',
-        '--header-bg-start-color':'transparent',
-        '--header-bg-end-color':'transparent',
-        '--header-gradient-direction':'135deg',
-        '--header-padding':'0.5em',
-        '--header-border-width':'0px',
-        '--header-border-color':'rgba(0,0,0,0.1)',
-        '--header-border-radius':'0px',
-        '--header-shadow-size':'0px',
-        '--header-shadow-color':'rgba(0, 0, 0, 0.1)',
-  
-        '--header-star-color':'inherit',
-        '--header-disabled-star-color':'inherit',
-        '--header-heading-text-color':'inherit',
-        '--header-heading-font-size':'inherit',
-        '--header-heading-font-weight':'inherit',
-        '--header-heading-line-height':'inherit',
-        '--header-heading-text-transform':'inherit',
-        '--header-subheading-text-color':'inherit',
-        '--header-subheading-font-size':'inherit',
-        '--header-subheading-font-weight':'inherit',
-        '--header-subheading-line-height':'inherit',
-        '--header-subheading-text-transform':'inherit',
-  
-        '--item-maximum-columns':'5',/*Must be 3 or larger*/
-        '--item-background-start-color':'transparent',
-        '--item-background-end-color':'transparent',
-        '--item-gradient-direction':'135deg',
-        '--item-padding':'0.5em',
-        '--item-border-width':'0px',
-        '--item-border-color':'rgba(0,0,0,0.1)',
-        '--item-border-radius':'0px',
-        '--item-shadow-size':'0px',
-        '--item-shadow-color':'rgba(0,0,0,0.1)',
-  
-        '--heading-text-color':' #0E1311',
-        '--heading-text-font-weight':' 600',
-        '--heading-text-font-family':' inherit',
-        '--heading-text-line-height':' 1.4',
-        '--heading-text-letter-spacing':'0',
-        '--heading-text-transform':'none',
-  
-        '--body-text-color':' #0E1311',
-        '--body-text-font-weight':'400',
-        '--body-text-font-family':' inherit',
-        '--body-text-line-height':' 1.4',
-        '--body-text-letter-spacing':'0',
-        '--body-text-transform':'none',
-  
-        '--scroll-button-icon-color':'#0E1311',
-        '--scroll-button-icon-size':'24px',
-        '--scroll-button-bg-color':'transparent',
-  
-        '--scroll-button-border-width':'0px',
-        '--scroll-button-border-color':'rgba(0,0,0,0.1)',
-  
-        '--scroll-button-border-radius':'60px',
-        '--scroll-button-shadow-size':'0px',
-        '--scroll-button-shadow-color':'rgba(0,0,0,0.1)',
-        '--scroll-button-horizontal-position':'0px',
-        '--scroll-button-vertical-position':'0px',
-  
-        '--badge-icon-color':'#0E1311',
-        '--badge-icon-font-size':'15px',
-        '--badge-text-color':'#0E1311',
-        '--badge-text-font-size':'inherit',
-        '--badge-text-letter-spacing':'inherit',
-        '--badge-text-transform':'inherit',
-  
-        '--author-font-size':'inherit',
-        '--author-font-weight':'inherit',
-        '--author-text-transform':'inherit',
-  
-        '--photo-video-thumbnail-size':'60px',
-        '--photo-video-thumbnail-border-radius':'0px',
-  
-        '--popup-backdrop-color':'rgba(0,0,0,0.75)',
-        '--popup-color':'#ffffff',
-        '--popup-star-color':'inherit',
-        '--popup-disabled-star-color':'inherit',
-        '--popup-heading-text-color':'inherit',
-        '--popup-body-text-color':'inherit',
-        '--popup-badge-icon-color':'inherit',
-        '--popup-badge-icon-font-size':'19px',
-        '--popup-badge-text-color':'inherit',
-        '--popup-badge-text-font-size':'14px',
-        '--popup-border-width':'0px',
-        '--popup-border-color':'rgba(0,0,0,0.1)',
-        '--popup-border-radius':'0px',
-        '--popup-shadow-size':'0px',
-        '--popup-shadow-color':'rgba(0,0,0,0.1)',
-        '--popup-icon-color':'#0E1311',
-  
-        '--tooltip-bg-color':'#0E1311',
-        '--tooltip-text-color':'#ffffff',
-      },
-    });
-}
+        console.log('Embedding reviews')
+        document.getElementById(config[environment].carouselBlockId).innerHTML = '<div id="reviewsio-carousel-widget"></div>';
 
-window.addEventListener("load", (event) => {
-  window.test = (window.location.hash.includes("debug") || window.location.search.includes("debug"))
-    
-  console.log("Loaded. Test:", window.test)
-  setTimeout(function () {embed_reviews()},1000)
-})
+        new carouselInlineWidget('reviewsio-carousel-widget', {
+            store: 'vpn-naoborot.online',
+            sku: '',
+            lang: 'en',
+            carousel_type: 'topHeader',
+            styles_carousel: 'CarouselWidget--topHeader',
+
+            options: {
+                general: {
+                    review_type: 'company, product',
+                    min_reviews: '1',
+                    max_reviews: '20',
+                    address_format: 'CITY, COUNTRY',
+                    enable_auto_scroll: 10000,
+                },
+                header: {
+                    enable_overall_stars: true,
+                    rating_decimal_places: 2,
+                },
+                reviews: {
+                    enable_customer_name: true,
+                    enable_customer_location: false,
+                    enable_verified_badge: true,
+                    enable_recommends_badge: true,
+                    enable_photos: true,
+                    enable_videos: true,
+                    enable_review_date: true,
+                    disable_same_customer: true,
+                    min_review_percent: 4,
+                    third_party_source: true,
+                    hide_empty_reviews: true,
+                    enable_product_name: true,
+                    tags: "",
+                    branch: "",
+                    enable_branch_name: false,
+                },
+                popups: {
+                    enable_review_popups: true,
+                    enable_helpful_buttons: true,
+                    enable_helpful_count: true,
+                    enable_share_buttons: true,
+                },
+            },
+            translations: {
+                verified_customer: "Verified Customer",
+            },
+            styles: {
+                '--base-font-size': '16px',
+                '--base-maxwidth': '100%',
+                '--reviewsio-logo-style': 'var(--logo-normal)',
+                '--common-star-color': '#3B82F6',
+                '--common-star-disabled-color': ' rgba(0,0,0,0.25)',
+                '--medium-star-size': ' 22px',
+                '--small-star-size': '19px', /*Modal*/
+                '--x-small-star-size': '16px',
+                '--x-small-star-display': 'inline-flex',
+
+                '--header-order': '1',
+                '--header-width': '160px',
+                '--header-bg-start-color': 'transparent',
+                '--header-bg-end-color': 'transparent',
+                '--header-gradient-direction': '135deg',
+                '--header-padding': '0.5em',
+                '--header-border-width': '0px',
+                '--header-border-color': 'rgba(0,0,0,0.1)',
+                '--header-border-radius': '0px',
+                '--header-shadow-size': '0px',
+                '--header-shadow-color': 'rgba(0, 0, 0, 0.1)',
+
+                '--header-star-color': 'inherit',
+                '--header-disabled-star-color': 'inherit',
+                '--header-heading-text-color': 'inherit',
+                '--header-heading-font-size': 'inherit',
+                '--header-heading-font-weight': 'inherit',
+                '--header-heading-line-height': 'inherit',
+                '--header-heading-text-transform': 'inherit',
+                '--header-subheading-text-color': 'inherit',
+                '--header-subheading-font-size': 'inherit',
+                '--header-subheading-font-weight': 'inherit',
+                '--header-subheading-line-height': 'inherit',
+                '--header-subheading-text-transform': 'inherit',
+
+                '--item-maximum-columns': '5',/*Must be 3 or larger*/
+                '--item-background-start-color': 'transparent',
+                '--item-background-end-color': 'transparent',
+                '--item-gradient-direction': '135deg',
+                '--item-padding': '0.5em',
+                '--item-border-width': '0px',
+                '--item-border-color': 'rgba(0,0,0,0.1)',
+                '--item-border-radius': '0px',
+                '--item-shadow-size': '0px',
+                '--item-shadow-color': 'rgba(0,0,0,0.1)',
+
+                '--heading-text-color': ' #0E1311',
+                '--heading-text-font-weight': ' 600',
+                '--heading-text-font-family': ' inherit',
+                '--heading-text-line-height': ' 1.4',
+                '--heading-text-letter-spacing': '0',
+                '--heading-text-transform': 'none',
+
+                '--body-text-color': ' #0E1311',
+                '--body-text-font-weight': '400',
+                '--body-text-font-family': ' inherit',
+                '--body-text-line-height': ' 1.4',
+                '--body-text-letter-spacing': '0',
+                '--body-text-transform': 'none',
+
+                '--scroll-button-icon-color': '#0E1311',
+                '--scroll-button-icon-size': '24px',
+                '--scroll-button-bg-color': 'transparent',
+
+                '--scroll-button-border-width': '0px',
+                '--scroll-button-border-color': 'rgba(0,0,0,0.1)',
+
+                '--scroll-button-border-radius': '60px',
+                '--scroll-button-shadow-size': '0px',
+                '--scroll-button-shadow-color': 'rgba(0,0,0,0.1)',
+                '--scroll-button-horizontal-position': '0px',
+                '--scroll-button-vertical-position': '0px',
+
+                '--badge-icon-color': '#0E1311',
+                '--badge-icon-font-size': '15px',
+                '--badge-text-color': '#0E1311',
+                '--badge-text-font-size': 'inherit',
+                '--badge-text-letter-spacing': 'inherit',
+                '--badge-text-transform': 'inherit',
+
+                '--author-font-size': 'inherit',
+                '--author-font-weight': 'inherit',
+                '--author-text-transform': 'inherit',
+
+                '--photo-video-thumbnail-size': '60px',
+                '--photo-video-thumbnail-border-radius': '0px',
+
+                '--popup-backdrop-color': 'rgba(0,0,0,0.75)',
+                '--popup-color': '#ffffff',
+                '--popup-star-color': 'inherit',
+                '--popup-disabled-star-color': 'inherit',
+                '--popup-heading-text-color': 'inherit',
+                '--popup-body-text-color': 'inherit',
+                '--popup-badge-icon-color': 'inherit',
+                '--popup-badge-icon-font-size': '19px',
+                '--popup-badge-text-color': 'inherit',
+                '--popup-badge-text-font-size': '14px',
+                '--popup-border-width': '0px',
+                '--popup-border-color': 'rgba(0,0,0,0.1)',
+                '--popup-border-radius': '0px',
+                '--popup-shadow-size': '0px',
+                '--popup-shadow-color': 'rgba(0,0,0,0.1)',
+                '--popup-icon-color': '#0E1311',
+
+                '--tooltip-bg-color': '#0E1311',
+                '--tooltip-text-color': '#ffffff',
+            },
+        });
+    }
+
+    window.addEventListener("load", (event) => {
+        window.test = (window.location.hash.includes("debug")
+            || window.location.search.includes("debug")
+            || window.location.origin === "https://test-vpnn.super.site");
+
+        console.log("Loaded. Test:", window.test)
+        setTimeout(function () { embed_reviews() }, 1000)
+    })
 </script>
 
 <script>
-  window.intercomSettings = {
-    api_base: "https://api-iam.intercom.io",
-    app_id: "y5urxrqf"
-  };
+    window.intercomSettings = {
+        api_base: "https://api-iam.intercom.io",
+        app_id: "y5urxrqf"
+    };
 </script>
 
 <script defer src="https://widget.cloudpayments.ru/bundles/cloudpayments.js"></script>
 
 <script>
-  window.addEventListener('message', handleMessage, false);
-    
-  function sendAnalyticsEvent(event_label) {
-      if (window.test) {
-          console.log("Test mode - analytics skipped");
-          return;
-      }
-      
-      gtag('event', event_label);
-      ym(91314673,'reachGoal', event_label)
-  }
-    
+    window.addEventListener('message', handleMessage, false);
+
+    function sendAnalyticsEvent(event_label) {
+        if (window.test) {
+            console.log("Test mode - analytics skipped");
+            return;
+        }
+        console.log("Sending alanitics event")
+        gtag('event', event_label);
+        ym(91314673, 'reachGoal', event_label)
+    }
+
     window.tarifs = {
-        "📂 Для документов" : {
+        [tariffNames.documentTarifNameIcon]: {
             "description": "VPN Наоборот – Для документов.\
  Ежемесячный платёж.",
             "rub-descriptions": {
-              "1-month":  "VPN Наоборот – Для документов.\
+                "1-month": "VPN Наоборот – Для документов.\
  Ежемесячный платёж.",
-              "6-month": "VPN Наоборот – Для документов.\
+                "6-month": "VPN Наоборот – Для документов.\
  Платёж раз в 6 месяцев.",
-              "1-year":  "VPN Наоборот – Для документов.\
+                "1-year": "VPN Наоборот – Для документов.\
  Ежегодный платёж."
             },
             "price": 290,
             "rub-prices": {
-              "1-month": 290,
-              "6-month": 1140,
-              "1-year": 1800,
+                "1-month": 290,
+                "6-month": 1140,
+                "1-year": 1800,
             },
             "stripe-url": "https://buy.stripe.com/bIYbL00OY8JH6o8bII",
             "stripe-urls": {
-              "1-month": "https://buy.stripe.com/eVacP42X6bVTbIs5kw",
-              "6-month": "https://buy.stripe.com/14k5mC69igc96o814f",
-              "1-year": "https://buy.stripe.com/9AQ6qG1T28JHfYI8wG",
+                "1-month": "https://buy.stripe.com/eVacP42X6bVTbIs5kw",
+                "6-month": "https://buy.stripe.com/14k5mC69igc96o814f",
+                "1-year": "https://buy.stripe.com/9AQ6qG1T28JHfYI8wG",
             },
             currencies: [
                 {
@@ -277,27 +283,27 @@ window.addEventListener("load", (event) => {
                 },
             ],
         },
-        [config[environmentText].videoTarifNameIcon]: {
+        [tariffNames.videoTarifNameIcon]: {
             "description": "VPN Наоборот – Для видео. Ежемесячный платёж.",
             "rub-descriptions": {
-              "1-month":  "VPN Наоборот – Для видео.\
+                "1-month": "VPN Наоборот – Для видео.\
  Ежемесячный платёж.",
-              "6-month": "VPN Наоборот – Для видео. \
+                "6-month": "VPN Наоборот – Для видео. \
  Платёж раз в 6 месяцев.",
-              "1-year":  "VPN Наоборот – Для видео. \
+                "1-year": "VPN Наоборот – Для видео. \
  Ежегодный платёж."
             },
             "price": 590,
             "rub-prices": {
-              "1-month": 590,
-              "6-month": 2700,
-              "1-year": 3480,
+                "1-month": 590,
+                "6-month": 2700,
+                "1-year": 3480,
             },
             "stripe-url": "https://buy.stripe.com/aEU6qGeFO1hf27S5kl",
             "stripe-urls": {
-              "1-month": "https://buy.stripe.com/fZeeXc1T26Bz7sc3cq",
-              "6-month": "https://buy.stripe.com/00gdT869i2lj5k4cMZ",
-              "1-year": "https://buy.stripe.com/9AQ02icxG4trfYI6ov",
+                "1-month": "https://buy.stripe.com/fZeeXc1T26Bz7sc3cq",
+                "6-month": "https://buy.stripe.com/00gdT869i2lj5k4cMZ",
+                "1-year": "https://buy.stripe.com/9AQ02icxG4trfYI6ov",
             },
             currencies: [
                 {
@@ -334,27 +340,27 @@ window.addEventListener("load", (event) => {
                 },
             ],
         },
-        [config[environmentText].personalTarifNameIcon]: {
+        [tariffNames.personalTarifNameIcon]: {
             "description": "VPN Наоборот – Личный сервер. Ежемесячный платёж.",
             "rub-descriptions": {
-              "1-month":  "VPN Наоборот – Личный сервер.\
+                "1-month": "VPN Наоборот – Личный сервер.\
  Ежемесячный платёж.",
-              "6-month": "VPN Наоборот – Личный сервер.\
+                "6-month": "VPN Наоборот – Личный сервер.\
  Платёж раз в 6 месяцев.",
-              "1-year":  "VPN Наоборот – Личный сервер.\
+                "1-year": "VPN Наоборот – Личный сервер.\
  Ежегодный платёж."
             },
             "price": 1490,
             "rub-prices": {
-              "1-month": 1490,
-              "6-month": 5940,
-              "1-year": 9480,
+                "1-month": 1490,
+                "6-month": 5940,
+                "1-year": 9480,
             },
-            "stripe-url":"https://buy.stripe.com/cN2aGWapy8JHaEobIL",
+            "stripe-url": "https://buy.stripe.com/cN2aGWapy8JHaEobIL",
             "stripe-urls": {
-              "1-month": "https://buy.stripe.com/00g16mapy0dbh2MdQS",
-              "6-month": "https://buy.stripe.com/fZe5mC41a4trh2M28c",
-              "1-year": "https://buy.stripe.com/8wMaGWbtC3pn13O3cl",
+                "1-month": "https://buy.stripe.com/00g16mapy0dbh2MdQS",
+                "6-month": "https://buy.stripe.com/fZe5mC41a4trh2M28c",
+                "1-year": "https://buy.stripe.com/8wMaGWbtC3pn13O3cl",
             },
             currencies: [
                 {
@@ -391,218 +397,218 @@ window.addEventListener("load", (event) => {
             ],
         },
     }
-    
-  function showPaymentWidget(email, tarif, billing_cycle = "1-month") {
-     
-    console.log("showing Payment widget")
-     
-    const tarif_id = Object.keys(window.tarifs).filter(item => item == tarif)[0]
-    
-    const periods = {
+
+    function showPaymentWidget(email, tarif, billing_cycle = "1-month") {
+
+        console.log("showing Payment widget")
+
+        const tarif_id = Object.keys(window.tarifs).filter(item => item == tarif)[0]
+
+        const periods = {
             "1-month": 1,
             "6-month": 6,
             "1-year": 12,
-          }
-          
-    const price = window.tarifs[tarif]["rub-prices"][billing_cycle]
-    const period = periods[billing_cycle]
-    const description = window.tarifs[tarif]["rub-descriptions"][billing_cycle]
-     
-    pay(email, price, description, tarif_id, period);
-  }
-  
-  function getStripePaymentLink(email, tarif, billing_cycle) {
-    if (!billing_cycle) {
-      billing_cycle = "1-month"
-    }
-    let encodedEmail = btoa(email);
-    let urlSafeEncodedEmail = encodedEmail.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-
-    url = "https://vpnnonline.com?link=" +  tarifs[tarif]["stripe-urls"][billing_cycle] + "?prefilled_email=" + encodeURIComponent(email) + "&client_reference_id=" + urlSafeEncodedEmail
-    console.log("Redirecting to ", url)
-    return url
-  }
-  const API_URL = "https://api.vpn-naoborot.online/v1/";
-
-  const redirectWithDelay = (email) => {
-    const interval = setInterval(async () => {
-        await fetchUser(email)
-    }, 10000)
-}
-
-const fetchUser = async (email) => {
-    return await fetch(API_URL + `get-token-by-email/?email=${encodeURIComponent(email)}`).then(result => {
-        return result.json();
-    }).then(response => {
-        if (response.code === 200 && response.auth_token && response.auth_token !== "") {
-            window.location = "https://lk.vpn-naoborot.online/?auth_token=" + response.auth_token
         }
-        return response
-    })
-}
 
-this.pay = function (email, price, description, tarif_id, period = 1) {
-    
-    var widget = new cp.CloudPayments();
-    console.log(window.attempt)
-    
-    var receipt = {
+        const price = window.tarifs[tarif]["rub-prices"][billing_cycle]
+        const period = periods[billing_cycle]
+        const description = window.tarifs[tarif]["rub-descriptions"][billing_cycle]
+
+        pay(email, price, description, tarif_id, period);
+    }
+
+    function getStripePaymentLink(email, tarif, billing_cycle) {
+        if (!billing_cycle) {
+            billing_cycle = "1-month"
+        }
+        let encodedEmail = btoa(email);
+        let urlSafeEncodedEmail = encodedEmail.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+
+        url = "https://vpnnonline.com?link=" + tarifs[tarif]["stripe-urls"][billing_cycle] + "?prefilled_email=" + encodeURIComponent(email) + "&client_reference_id=" + urlSafeEncodedEmail
+        console.log("Redirecting to ", url)
+        return url
+    }
+    const API_URL = "https://api.vpn-naoborot.online/v1/";
+
+    const redirectWithDelay = (email) => {
+        const interval = setInterval(async () => {
+            await fetchUser(email)
+        }, 10000)
+    }
+
+    const fetchUser = async (email) => {
+        return await fetch(API_URL + `get-token-by-email/?email=${encodeURIComponent(email)}`).then(result => {
+            return result.json();
+        }).then(response => {
+            if (response.code === 200 && response.auth_token && response.auth_token !== "") {
+                window.location = "https://lk.vpn-naoborot.online/?auth_token=" + response.auth_token
+            }
+            return response
+        })
+    }
+
+    this.pay = function (email, price, description, tarif_id, period = 1) {
+
+        var widget = new cp.CloudPayments();
+        console.log(window.attempt)
+
+        var receipt = {
             Items: [
-                 {
-                    label: description, 
-                    price: price, 
-                    quantity: 1.00, 
-                    amount: price, 
-                    vat: null, 
-                    method: 4, 
-                    object: 4, 
+                {
+                    label: description,
+                    price: price,
+                    quantity: 1.00,
+                    amount: price,
+                    vat: null,
+                    method: 4,
+                    object: 4,
                 }
             ],
             CalculationPlace: "vpn-naoborot.online",
-            taxationSystem: 2, 
-            email: email, 
-            isBso: false, 
+            taxationSystem: 2,
+            email: email,
+            isBso: false,
             amounts:
             {
                 electronic: price,
-                advancePayment: 0.00, 
-                credit: 0.00, 
-                provision: 0.00 
+                advancePayment: 0.00,
+                credit: 0.00,
+                provision: 0.00
             }
         };
 
         var data = {};
         data.CloudPayments = {
-            CustomerReceipt: receipt, 
+            CustomerReceipt: receipt,
             recurrent: {
-             interval: 'Month',
-             period: period, 
-             customerReceipt: receipt 
-             }
-             };
+                interval: 'Month',
+                period: period,
+                customerReceipt: receipt
+            }
+        };
         data['tarif_id'] = tarif_id;
 
-        widget.pay('charge', 
-        { 
-            publicId: 'pk_e7d787f0deecc2d9f27183be0841b', 
-            description: description, 
-            amount: price, 
-            currency: 'RUB', 
-            accountId: email,
-            email: email,
-            data: data,
-        },
-        {
-            onSuccess: async function (options) { 
+        widget.pay('charge',
+            {
+                publicId: 'pk_e7d787f0deecc2d9f27183be0841b',
+                description: description,
+                amount: price,
+                currency: 'RUB',
+                accountId: email,
+                email: email,
+                data: data,
+            },
+            {
+                onSuccess: async function (options) {
                     await fetchUser(email);
 
                     console.log("Payment succeded!");
-                    if (!window.location.hash.includes("debug")){
+                    if (!window.location.hash.includes("debug")) {
                         sendAnalyticsEvent("successful_payment");
                     }
                 }
-        }
+            }
         )
     };
-  
-  function processPayment(paymentMethod, email, tarif, billing_cycle){
-    
-    if (paymentMethod == 'Зарубежной картой') {
-      URL = getStripePaymentLink(email, tarif, billing_cycle)
-      window.open(URL, '_blank');
+
+    function processPayment(paymentMethod, email, tarif, billing_cycle) {
+
+        if (paymentMethod == 'Зарубежной картой') {
+            URL = getStripePaymentLink(email, tarif, billing_cycle)
+            window.open(URL, '_blank');
             redirectWithDelay(email)
-      return
+            return
+        }
+        showPaymentWidget(email, tarif, billing_cycle)
     }
-    showPaymentWidget(email, tarif, billing_cycle)  
-  }
-  
-  function getFormName(name){
-    let gevent = "";
-    switch (name){
-            case '🤝 Бесплатный':
+
+    function getFormName(name) {
+        let gevent = "";
+        switch (name) {
+            case tariffNames.freeTarifNameIcon:
                 gevent = "form_free"
                 break;
-              case '📂 Для документов':
+            case tariffNames.documentTarifNameIcon:
                 gevent = "form_docs"
                 break;
-              case [config[environmentText].videoTarifNameIcon]:
+            case tariffNames.videoTarifNameIcon:
                 gevent = "form_video"
                 break;
-              case [config[environmentText].personalTarifNameIcon]:
+            case tariffNames.personalTarifNameIcon:
                 gevent = "form_server"
                 break;
-          }
-          return gevent
-}
-  
-  function handleMessage(event) {  
-      try {
-
-          if (event.origin != "https://noteforms.com"
-            & event.origin != "https://vpn-naoborot.online"
-            & event.origin != "https://test-vpnn.super.site") { 
-                console.log("wrong origin:",event.origin); 
-                return; 
-          }  
-
-          console.log("Parent got message: ", event)
-
-          if (typeof event.data !== 'string') {
-              console.log("This is not my event:", event.data);
-              return;
-          }
-          
-          let eventData;
-          try {
-              eventData = JSON.parse(event.data);
-          } catch (error) {
-              return;
-          }
-          console.log(eventData)
-
-          if (!eventData.hasOwnProperty('tarif') || !eventData.hasOwnProperty('status')) {
-              console.log("This is not my event:", event);
-              return;
-          }
-
-          if (eventData["status"] == "fail") {
-              sendAnalyticsEvent("send_form_all_fail");
-              return;
-          } else {
-              sendAnalyticsEvent("send_form_all");
-          }
-
-          var gevent = "";
-          switch (eventData["tarif"]){
-              case '🤝 Бесплатный':
-                gevent = "send_form_free"
-                break;
-              case '📂 Для документов':
-                gevent = "send_form_docs"
-                break;
-              case [config[environmentText].videoTarifNameIcon]:
-                gevent = "send_form_video"
-                break;
-              case [config[environmentText].personalTarifNameIcon]:
-                gevent = "send_form_server"
-                break;
-          }
-
-          if (eventData["status"] == "fail") {
-              gevent = gevent + "_fail";
-          }
-          sendAnalyticsEvent(gevent);
-
-          if (eventData["status"] == "success" && eventData["tarif"] != "🤝 Бесплатный") {
-               processPayment(eventData["paymentMethod"], eventData["email"], eventData["tarif"], eventData["billing_cycle"]?eventData["billing_cycle"]:undefined)
-          }
-    } catch (error) {
-          console.error(error);
+        }
+        return gevent
     }
- }
+
+    function handleMessage(event) {
+        try {
+
+            if (event.origin != "https://noteforms.com"
+                & event.origin != "https://vpn-naoborot.online"
+                & event.origin != "https://test-vpnn.super.site") {
+                console.log("wrong origin:", event.origin);
+                return;
+            }
+
+            console.log("Parent got message: ", event)
+
+            if (typeof event.data !== 'string') {
+                console.log("This is not my event:", event.data);
+                return;
+            }
+
+            let eventData;
+            try {
+                eventData = JSON.parse(event.data);
+            } catch (error) {
+                return;
+            }
+            console.log(eventData)
+
+            if (!eventData.hasOwnProperty('tarif') || !eventData.hasOwnProperty('status')) {
+                console.log("This is not my event:", event);
+                return;
+            }
+
+            if (eventData["status"] == "fail") {
+                sendAnalyticsEvent("send_form_all_fail");
+                return;
+            } else {
+                sendAnalyticsEvent("send_form_all");
+            }
+
+            var gevent = "";
+            switch (eventData["tarif"]) {
+                case tariffNames.freeTarifNameIcon:
+                    gevent = "send_form_free"
+                    break;
+                case tariffNames.documentTarifNameIcon:
+                    gevent = "send_form_docs"
+                    break;
+                case tariffNames.videoTarifNameIcon:
+                    gevent = "send_form_video"
+                    break;
+                case tariffNames.personalTarifNameIcon:
+                    gevent = "send_form_server"
+                    break;
+            }
+
+            if (eventData["status"] == "fail") {
+                gevent = gevent + "_fail";
+            }
+            sendAnalyticsEvent(gevent);
+
+            if (eventData["status"] == "success" && eventData["tarif"] != tariffNames.freeTarifNameIcon) {
+                processPayment(eventData["paymentMethod"], eventData["email"], eventData["tarif"], eventData["billing_cycle"] ? eventData["billing_cycle"] : undefined)
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     window.addEventListener('load', () => {
-        
+
 
         let defaultCurrency = localStorage.getItem('defaultCurrency')
         if (!defaultCurrency) {
@@ -708,8 +714,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 },
                 {
                     icon: "📺",
-                    name: [config[environmentText].videoTarifName],
-                    tariff: [config[environmentText].videoTarifNameIcon],
+                    name: tariffNames.videoTarifName,
+                    tariff: tariffNames.videoTarifNameIcon,
                     image: "/assets/images/team.png",
                     description: "Для документов, развлечений и удалённой учёбы.",
                     price: 290,
@@ -760,8 +766,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 },
                 {
                     icon: "😎",
-                    tariff: [config[environmentText].personalTarifNameIcon],
-                    name: [config[environmentText].personalTarifName],
+                    tariff: tariffNames.personalTarifNameIcon,
+                    name: tariffNames.personalTarifName,
                     image: "/assets/images/enterprise.png",
                     description: "Для документов, развлечений, удалённой учёбы и работы.",
                     price: 790,
@@ -840,7 +846,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 return words[2];
 
             };
-            
+
 
             const product = (product) => {
                 return `
@@ -886,7 +892,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 if (buttonsCard) {
                     buttonsCard.forEach(button => {
                         button.addEventListener('click', event => {
-                            document.querySelector(config[environment].buttonBlockId).scrollIntoView({behavior: "smooth"})
+                            document.querySelector(config[environment].buttonBlockId).scrollIntoView({ behavior: "smooth" })
                         })
                     })
                 }
@@ -963,7 +969,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
     function processListItemClick(itemName) {
         switch (itemName) {
-            case "Зарубежной картой": 
+            case "Зарубежной картой":
                 embedDocuments("english");
                 break;
             case "Российской картой":
@@ -973,7 +979,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
     }
 
     window.addEventListener('load', () => {
-        const formEnabled = (window.location.hash.includes("newform") || window.location.search.includes("newform")) || environment == 'test';
+        // const formEnabled = (window.location.hash.includes("newform") || window.location.search.includes("newform")) || environment == 'test';
+        const formEnabled = true
         console.log("Form enabled:", formEnabled)
         const content = `<div id="form-block" class="form-container mx-auto px-4">
         
@@ -1016,7 +1023,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
         </div>`;
 
         let captchaWidgetId;
-        
+
         function getCaptchaToken() {
             if (captchaWidgetId !== undefined) {
                 return grecaptcha.enterprise.getResponse(captchaWidgetId);
@@ -1086,8 +1093,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     },
                     {
                         icon: "📺",
-                        name: config[environmentText].videoTarifName,
-                        tariff: config[environmentText].videoTarifNameIcon,
+                        name: tariffNames.videoTarifName,
+                        tariff: tariffNames.videoTarifNameIcon,
                         price: 3,
                         currency: "€",
                         period: 12,
@@ -1126,8 +1133,8 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     },
                     {
                         icon: "😎",
-                        tariff: config[environmentText].personalTarifNameIcon,
-                        name: config[environmentText].personalTarifName,
+                        tariff: tariffNames.personalTarifNameIcon,
+                        name: tariffNames.personalTarifName,
                         price: 8,
                         currency: "€",
                         period: 12,
@@ -1167,7 +1174,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 ];
 
                 replace.firstElementChild.innerHTML = content;
-                
+
                 window.addEventListener('click', (event) => {
                     const lists = document.querySelectorAll('.custom-selection-list')
                     const target = event.target
@@ -1276,7 +1283,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                             }
                             console.log(plans[1].currencies[0], plans[1].period, target.dataset.value)
                             const paymentTypeElement = document.getElementById('id-payment_type');
-                            
+
                             renderSelections(plans)
                         })
 
@@ -1342,7 +1349,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                 html: () => {
                                     if (activePlan.name === "Бесплатный") {
                                         let captchaElement = document.getElementById("captcha_box");
-                                        
+
                                         if (!captchaElement) {
                                             captchaElement = document.createElement("div");
                                             captchaElement.id = "captcha_box";
@@ -1352,20 +1359,20 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                                             textCaptchaElement.innerText = "Подтвердите, что Вы не робот";
                                             textCaptchaElement.id = "captcha_text";
                                             textCaptchaElement.class = "captcha_text";
-                                            
+
                                             let formSubscriptionElement = document.getElementById("captcha-container");
                                             formSubscriptionElement.appendChild(textCaptchaElement);
                                             formSubscriptionElement.appendChild(captchaElement);
                                             captchaWidgetId = grecaptcha.enterprise.render('captcha_box', {
-                                                'sitekey' : "6LfPLEIoAAAAAEn8NaCcwWtdv0qTUFmAAKF_ufhW",
-                                                'action' : 'SELECTED_FREE_PLAN',
-                                                'data-sitekey' : "6LfPLEIoAAAAAEn8NaCcwWtdv0qTUFmAAKF_ufhW",
-                                                'data-action' : "SELECTED_FREE_PLAN"
+                                                'sitekey': "6LfPLEIoAAAAAEn8NaCcwWtdv0qTUFmAAKF_ufhW",
+                                                'action': 'SELECTED_FREE_PLAN',
+                                                'data-sitekey': "6LfPLEIoAAAAAEn8NaCcwWtdv0qTUFmAAKF_ufhW",
+                                                'data-action': "SELECTED_FREE_PLAN"
                                             });
                                         }
                                     } else {
                                         let captchaElement = document.getElementById("captcha_box");
-                                        
+
                                         if (captchaElement) {
                                             let element = document.getElementById("captcha-container");
                                             while (element.firstChild) {
@@ -1437,11 +1444,11 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
 
                                     if (option.currency === '₽') {
                                         const phrase = ` (cкидка ${(one_month.price * option.period) - (option.price * option.period)}${option.currency})`;
-                                        return `<p>  ${option.period > 1 ? `<span class="line-through">${one_month.price *option.period }${option.currency}</span>` : ''}
+                                        return `<p>  ${option.period > 1 ? `<span class="line-through">${one_month.price * option.period}${option.currency}</span>` : ''}
                                                         ${option.price * option.period}${option.currency}  ${option.period !== 1 ? plural_word + phrase : plural_word}</p>`
                                     }
                                     const phrase = ` (cкидка ${option.currency}${(one_month.price * option.period) - (option.price * option.period)})`;
-                                    return `<p>  ${option.period > 1 ? `<span class="line-through">${option.currency}${one_month.price *option.period }</span>` : ''}
+                                    return `<p>  ${option.period > 1 ? `<span class="line-through">${option.currency}${one_month.price * option.period}</span>` : ''}
                                                      ${option.currency}${option.price * option.period}  ${option.period !== 1 ? plural_word + phrase : plural_word}</p>`
                                 }
                             }
@@ -1484,7 +1491,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         }
                         while (agreement_box.firstChild) {
                             agreement_box.removeChild(agreement_box.lastChild);
-                        } 
+                        }
                         if (activePlan.name === "Бесплатный") {
                             if (sub.type === "tariff_type") {
                                 cardRow.insertAdjacentHTML('beforeend', selectTemplate(sub, sub.value, rowWidth, html))
@@ -1498,7 +1505,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                         const checkboxDiv = document.getElementById('checkAgree');
                         const checkbox = document.getElementById('agree');
                         if (checkbox) {
-                            checkbox.addEventListener('change', function() {
+                            checkbox.addEventListener('change', function () {
                                 const existingHintAgree = document.querySelector('.hint-message-checkAgree');
                                 if (checkbox.checked && existingHintAgree) {
                                     existingHintAgree.remove();
@@ -1509,20 +1516,20 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     }
                     addEventsToSelections();
                 }
-                const paymentTypeElement = document.getElementById('id-payment_type'); 
-                
+                const paymentTypeElement = document.getElementById('id-payment_type');
+
                 renderSelections(plans);
             }
 
             const emailInputElement = document.getElementById('InputEmail');
             if (emailInputElement) {
-                emailInputElement.addEventListener('blur', function() {
+                emailInputElement.addEventListener('blur', function () {
                     const email = emailInputElement.value;
                     const existingHint = document.querySelector('.hint-message-InputEmail');
-                    
+
                     if (isValidEmail(email) && existingHint) {
                         existingHint.remove();
-                        // emailInputElement.classList.remove('#invalid-input');
+                        // emailInputElement.classList.remove('invalid-input');
                         emailInputElement.style.border = "1px solid #cbd5e1"
                     }
                 });
@@ -1536,7 +1543,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
         function addHint(elementId, message) {
             const inputElement = document.getElementById(elementId);
             const hintElement = document.createElement('div');
-            
+
             hintElement.className = `hint-message-${elementId}`;
             hintElement.style.color = 'red';
             hintElement.style.fontSize = '14px';
@@ -1594,7 +1601,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             const planName = planElement ? planElement.innerText : "";
             const paymentMethod = paymentMethodElement ? paymentMethodElement.innerText : "Зарубежной картой";
             const period = periodElement ? periodElement.innerText : "1 Год";
-            
+
             let allCorrect = true;
             const email = emailInputElement.value;
             const existingHintEmail = document.querySelector('.hint-message-InputEmail');
@@ -1610,7 +1617,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             }
 
             let formData = {
-                submission:{
+                submission: {
                     "Тариф": planName,
                     "Email": email,
                     "Способ оплаты": paymentMethod,
@@ -1632,7 +1639,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 tarif: planName
             };
 
-            if (planName === "🤝 Бесплатный") {
+            if (planName === tariffNames.freeTarifNameIcon) {
                 const captchaToken = getCaptchaToken();
                 if (!captchaToken) {
                     document.querySelector('#captcha_box > div > div > iframe').classList.add("captcha_error");
@@ -1648,7 +1655,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                 }
                 const existingHintAgree = document.querySelector('.hint-message-checkAgree');
                 console.log("Checkbox checked status:", checkbox.checked);
-                
+
                 if (!checkbox.checked) {
                     addHint('checkAgree', 'Пожалуйста, согласитесь с условиями перед отправкой формы!');
                     document.getElementById('checkAgree').classList.add('invalid-agree');
@@ -1657,7 +1664,7 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
                     existingHintAgree.remove();
                 }
             }
-            if (!allCorrect) {return;}
+            if (!allCorrect) { return; }
 
             console.log('formData:', formData);
             showLoader();
@@ -1671,47 +1678,47 @@ this.pay = function (email, price, description, tarif_id, period = 1) {
             });
 
             Promise.race([
-                            fetch('https://api.vpn-naoborot.online/v1/api/create-submission-webhook/', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Accept': '*/*'
-                                },
-                                body: JSON.stringify(formData)
-                            }),
-                            timeoutPromise
-                        ])
-                        .then(response => {
-                            if (!response.ok) {
-                                message.status = "fail";
-                                throw new Error('Network response was not ok');
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log(data);
-                            message.status = "success";
-                            showSuccess();
-                        })
-                        .catch(error => {
-                            console.error("Error:", error);
-                            message.status = "fail";
-                            showError();
-                        })
-                        .finally(() => {
-                            console.log(message);
-                            window.postMessage(JSON.stringify(message), config[environment].address);
-                        });
+                fetch('https://api.vpn-naoborot.online/v1/api/create-submission-webhook/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': '*/*'
+                    },
+                    body: JSON.stringify(formData)
+                }),
+                timeoutPromise
+            ])
+                .then(response => {
+                    if (!response.ok) {
+                        message.status = "fail";
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    message.status = "success";
+                    showSuccess();
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    message.status = "fail";
+                    showError();
+                })
+                .finally(() => {
+                    console.log(message);
+                    window.postMessage(JSON.stringify(message), config[environment].address);
+                });
         }
 
         const interval = setInterval(() => {
-            
+
             let replace = document.querySelector(config[environment].replaceBlockId);
 
             if (replace) {
                 appendBlock(replace);
                 clearInterval(interval);
-                document.querySelector('.btn.btn-primary').addEventListener('click', function(e) {
+                document.querySelector('.btn.btn-primary').addEventListener('click', function (e) {
                     e.preventDefault();
                     submitData();
                 });

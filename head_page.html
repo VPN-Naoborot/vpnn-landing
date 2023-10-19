@@ -1,49 +1,49 @@
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-    <script>
-        window.intercomSettings = {
-            api_base: "https://api-iam.intercom.io",
-            app_id: "y5urxrqf"
-        };
-    </script>
-    <script>
-        const config = {
-            production: {
-                carouselBlockId: "block-03e781ba4c1647c3ae5897f233a03442",
-                buttonBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
-                replaceBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
-                address: "https://vpn-naoborot.online/",
-                videoTarifNameIcon: "📺 Для Видео",
-                videoTarifName: "Для Видео",
-                personalTarifNameIcon: "😎 Личный сервер",
-                personalTarifName: "Личный сервер",
-                freeTarifNameIcon: "🤝 Бесплатный",
-                freeTarifName: "Бесплатный",
-                documentTarifNameIcon: "📂 Для документов",
-                documentTarifName: "Для документов"
-            },
-            test: {
-                carouselBlockId: "block-cb7cecee864a47af815c267ff4a1b333",
-                buttonBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
-                replaceBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
-                address: "https://test-vpnn.super.site/",
-                videoTarifNameIcon: "📺 Для Видео",
-                videoTarifName: "Для Видео",
-                personalTarifNameIcon: "😎 Личный сервер",
-                personalTarifName: "Личный сервер",
-                freeTarifNameIcon: "🤝 Бесплатный",
-                freeTarifName: "Бесплатный",
-                documentTarifNameIcon: "📂 Для документов",
-                documentTarifName: "Для документов"
-            }
-        };
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<script>
+    window.intercomSettings = {
+        api_base: "https://api-iam.intercom.io",
+        app_id: "y5urxrqf"
+    };
+</script>
+<script>
+    const config = {
+        production: {
+            carouselBlockId: "block-03e781ba4c1647c3ae5897f233a03442",
+            buttonBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
+            replaceBlockId: "#block-0ce947a4080e4ac39624c276f7580991",
+            address: "https://vpn-naoborot.online/"
+        },
+        test: {
+            carouselBlockId: "block-cb7cecee864a47af815c267ff4a1b333",
+            buttonBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
+            replaceBlockId: "#block-a1ed09dd090f4b518a4514e8ad93b590",
+            address: "https://test-vpnn.super.site/"
+        }
+    };
 
-        const environment = (window.location.hostname.includes("test-vpnn.super.site")) ? "test" : "production";
-        const environmentText = (window.location.hostname.includes("test-vpnn.super.site") || window.location.search.includes("newform")) ? "test" : "production";
-        
-        console.log('Environment: ', environment)
+    const tariffNames = {
 
-        const agreementDocuments = {
-            russian: `<p>🔒 Отправляя
+        videoTarifNameIcon: "📺 Для Видео",
+        videoTarifName: "Для Видео",
+
+        personalTarifNameIcon: "😎 Личный сервер",
+        personalTarifName: "Личный сервер",
+
+        freeTarifNameIcon: "🤝 Бесплатный",
+        freeTarifName: "Бесплатный",
+
+        documentTarifNameIcon: "📂 Для документов",
+        documentTarifName: "Для документов"
+    }
+    console.log('Tariff names: ', tariffNames)
+
+    const environment = (window.location.hostname.includes("test-vpnn.super.site")) ? "test" : "production";
+    const environmentText = (window.location.hostname.includes("test-vpnn.super.site") || window.location.search.includes("newform")) ? "test" : "production";
+
+    console.log('Environment: ', environment)
+
+    const agreementDocuments = {
+        russian: `<p>🔒 Отправляя
                 заявку, вы принимаете <a href="https://vpn-naoborot.online/docs/privacy-policy"
                                             rel="nofollow noreferrer noopener" target="_blank">политику
                     конфиденциальности</a>, <a href="https://vpn-naoborot.online/docs/oferta"
@@ -51,41 +51,41 @@
                                                 target="_blank"><span>оферту</span></a> и <a
                         href="https://vpn-naoborot.online/docs/terms-of-service" rel="nofollow noreferrer noopener"
                         target="_blank">условия обслуживания</a>.</p>`,
-            english: `<p>🔒 Отправляя
+        english: `<p>🔒 Отправляя
                 заявку, вы принимаете <a href="https://vpnnonline.com/privacy-policy"
                                                 rel="nofollow noreferrer noopener" target="_blank">политику
                         конфиденциальности</a> и <a
                             href="https://vpnnonline.com/terms-of-service" rel="nofollow noreferrer noopener"
                             target="_blank">условия обслуживания</a>.</p>`
-        }
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Changing emoji");
-            // document.body.innerHTML = twemoji.parse(document.body.innerHTML);
-        });
-        function handleButtonClick(currency, tariff) {
-            console.log("Choosen tariff", tariff);
+    }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("Changing emoji");
+        // document.body.innerHTML = twemoji.parse(document.body.innerHTML);
+    });
+    function handleButtonClick(currency, tariff) {
+        console.log("Choosen tariff", tariff);
 
-            switch (tariff) {
-                case config[environment].freeTarifName:
-                    document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(1)").click();
-                    return;
-                case config[environment].documentTarifName:
-                    document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(2)").click();
-                    break;
-                case config[environment].videoTarifName:
-                    document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(3)").click();
-                    break;    
-                case config[environment].personalTarifName:
-                    document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(4)").click();
-                    break;
-            }
-
-            if (currency == "€") {
-                document.querySelector("#form-id-payment_type > div > ul > li:nth-child(1)").click();
-            } else {
-                document.querySelector("#form-id-payment_type > div > ul > li:nth-child(2)").click();
-            }
+        switch (tariff) {
+            case config[environment].freeTarifName:
+                document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(1)").click();
+                return;
+            case config[environment].documentTarifName:
+                document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(2)").click();
+                break;
+            case config[environment].videoTarifName:
+                document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(3)").click();
+                break;
+            case config[environment].personalTarifName:
+                document.querySelector("#form-id-tariff_type > div > ul > li:nth-child(4)").click();
+                break;
         }
-    </script>
+
+        if (currency == "€") {
+            document.querySelector("#form-id-payment_type > div > ul > li:nth-child(1)").click();
+        } else {
+            document.querySelector("#form-id-payment_type > div > ul > li:nth-child(2)").click();
+        }
+    }
+</script>
